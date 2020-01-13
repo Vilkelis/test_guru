@@ -5,6 +5,7 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'db/seeds.rb'
+    - 'db/schema.rb'
     - 'Gemfile'
     - 'Rakefile'
 
