@@ -4,8 +4,7 @@
 class User < ApplicationRecord
   # Returns user tests for specific test level
   def tests(level)
-    UserTest.where(user_id: id, level: level)
-            .joins('INNER JOIN tests ON test.id = user_tests.id')
-            .where(tests: { level: level })
+    Test.joins('INNER JOIN user_tests ON user_tests.test_id = tests.id')
+        .where(tests: { level: level }, user_tests: { user_id: id })
   end
 end
