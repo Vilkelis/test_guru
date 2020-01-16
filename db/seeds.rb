@@ -13,13 +13,13 @@ users = User.create!([{name: 'Иван'},{name: 'Петр'}])
 categories = Category.create!([{title: 'Ruby'},{title: 'Ruby on Rails'}])
 
 tests = []
-tests << Test.create!(title: 'Ruby начальный', level: 0, category_id: categories[0].id)
-tests << Test.create!(title: 'Ruby продвинутый', level: 1, category_id: categories[0].id)
-tests << Test.create!(title: 'Rails начальный', level: 0, category_id: categories[1].id)
-tests << Test.create!(title: 'Rails продвинутый', level: 1, category_id: categories[1].id)
+tests << Test.create!(title: 'Ruby начальный', level: 0, category_id: categories[0].id, author_id: users[0].id)
+tests << Test.create!(title: 'Ruby продвинутый', level: 1, category_id: categories[0].id, author_id: users[0].id)
+tests << Test.create!(title: 'Rails начальный', level: 0, category_id: categories[1].id, author_id: users[1].id)
+tests << Test.create!(title: 'Rails продвинутый', level: 1, category_id: categories[1].id, author_id: users[1].id)
 
-UserTest.create!(user_id: users[0].id, test_id: tests[0].id)
-UserTest.create!(user_id: users[1].id, test_id: tests[2].id)
+TestsUser.create!(user_id: users[0].id, test_id: tests[0].id)
+TestsUser.create!(user_id: users[1].id, test_id: tests[2].id)
 
 questions = []
 questions << Question.create!(body: 'Укажите результат выражения 1++ ',
