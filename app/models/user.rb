@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :tests, through: :tests_users, dependent: :destroy
   has_many :own_tests, class_name: 'Test', foreign_key: 'author_id',
                        inverse_of: :author, dependent: :destroy
+
+  validates :name, :email, presence: true
+
   # Returns user tests for specific test level
   def used_tests(level)
     tests.where(level: level)
