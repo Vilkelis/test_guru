@@ -8,9 +8,9 @@ class Test < ApplicationRecord
   has_many :users, through: :tests_users, dependent: :destroy
   belongs_to :author, class_name: 'User'
 
-  scope :simple_complexity, -> { where(level: (0..1)) }
-  scope :medium_complexity, -> { where(level: (2..4)) }
-  scope :hard_complexity, -> { where(level: (3..Float::INFINITY)) }
+  scope :simple, -> { where(level: (0..1)) }
+  scope :medium, -> { where(level: (2..4)) }
+  scope :hard, -> { where(level: (3..Float::INFINITY)) }
 
   validates :level, numericality: { only_integer: true,
                                     greater_than_or_equal_to: 0 }

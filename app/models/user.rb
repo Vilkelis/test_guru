@@ -10,7 +10,12 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   # Returns user tests for specific test level
+  # the level can take values :simple, :medium, :hard
   def used_tests(level)
-    tests.where(level: level)
+    unless %i[simple medium hard].include?(level)
+      raise 'Invalid value for level'
+    end
+
+    tests.send(level)
   end
 end
