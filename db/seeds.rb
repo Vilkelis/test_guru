@@ -8,15 +8,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{name: 'Иван'},{name: 'Петр'}])
+users = User.create!([{name: 'Иван', email: 'ivan@yandex.ru'},{name: 'Петр', email: 'petr@yandex.ru'}])
 
 categories = Category.create!([{title: 'Ruby'},{title: 'Ruby on Rails'}])
 
 tests = []
 tests << Test.create!(title: 'Ruby начальный', level: 0, category: categories[0], author: users[0])
-tests << Test.create!(title: 'Ruby продвинутый', level: 1, category: categories[0], author: users[0])
-tests << Test.create!(title: 'Rails начальный', level: 0, category: categories[1], author: users[1])
-tests << Test.create!(title: 'Rails продвинутый', level: 1, category: categories[1], author: users[1])
+tests << Test.create!(title: 'Ruby продвинутый', level: 2, category: categories[0], author: users[0])
+tests << Test.create!(title: 'Rails начальный', level: 1, category: categories[1], author: users[1])
+tests << Test.create!(title: 'Rails продвинутый', level: 2, category: categories[1], author: users[1])
 
 TestsUser.create!(user: users[0], test: tests[0])
 TestsUser.create!(user: users[1], test: tests[2])
