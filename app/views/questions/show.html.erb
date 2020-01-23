@@ -1,0 +1,10 @@
+<h1><%= @question.body %></h1>
+
+<h2>Answers variants</h2>
+<ul>
+	<% @question.answers.each do |answer| %>
+		<li><%= answer.body %></li>
+	<% end %>
+</ul>
+
+<%= render 'back_button' %>

@@ -1,0 +1,14 @@
+<hr>
+<%= current_year %>
+<%= TestGuru::Application::AUTHOR %>
+<br>
+<%= link_to TestGuru::Application::NAME, 
+						github_url(TestGuru::Application::GITHUB_AUTHOR, 
+											 TestGuru::Application::GITHUB_REPO),
+					  target: :blank %>
+<br>											 
+<%= TestGuru::Application::DESCRIPTION %>			
+<br>								 
+<%= link_to TestGuru::Application::PROJECT_DESCRIPTION, 
+						TestGuru::Application::PROJECT_LINK, 
+						target: :blank %>
