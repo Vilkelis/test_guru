@@ -8,6 +8,7 @@ AllCops:
     - 'db/schema.rb'
     - 'Gemfile'
     - 'Rakefile'
+    - 'node_modules/**/*'
 
 Rails:
   Enabled: true
