@@ -18,8 +18,8 @@ tests << Test.create!(title: 'Ruby продвинутый', level: 2, category: 
 tests << Test.create!(title: 'Rails начальный', level: 1, category: categories[1], author: users[1])
 tests << Test.create!(title: 'Rails продвинутый', level: 2, category: categories[1], author: users[1])
 
-TestsUser.create!(user: users[0], test: tests[0])
-TestsUser.create!(user: users[1], test: tests[2])
+#TestPassage.create!(user: users[0], test: tests[0])
+#TestPassage.create!(user: users[1], test: tests[2])
 
 questions = []
 questions << Question.create!(body: 'Укажите результат выражения 1++ ',
