@@ -28,7 +28,7 @@ class TestPassage < ApplicationRecord
     success_percent >= PASSED_SUCCESSFULLY_LIMIT
   end
 
-  def current_question_no
+  def current_question_number
     test.questions.where('id <= :id', id: current_question.id).count
   end
 
