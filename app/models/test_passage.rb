@@ -8,8 +8,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
+  before_validation :before_validation_set_next_question
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -34,10 +33,6 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
-  end
-
   def before_validation_set_next_question
     self.current_question = next_question
   end
@@ -51,6 +46,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).find_by('id > :id', id: current_question.id)
+    if current_question.nil?
+      test.questions.order(:id).first
+    else
+      test.questions.order(:id).find_by('id > :id', id: current_question.id)
+    end
   end
 end
