@@ -9,7 +9,6 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true
 
-
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
