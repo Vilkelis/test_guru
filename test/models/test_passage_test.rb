@@ -2,8 +2,7 @@
 
 require 'test_helper'
 
-# Answer tests
-class AnswerTest < ActiveSupport::TestCase
+class TestPassageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

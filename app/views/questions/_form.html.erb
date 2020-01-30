@@ -4,7 +4,7 @@
   <%= render 'shared/errors', resource: @question%>
 	<p>
 		<%= form.label :question, :body %> <br>
-		<%= form.text_field :body, id: :question_body %>
+		<%= form.text_area :body, id: :question_body, cols: 40, rows: 4 %>
 	</p>
 	<p>
 		<%= form.submit %>

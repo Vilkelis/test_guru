@@ -2,8 +2,8 @@
 
 require 'test_helper'
 
-# Answer tests
-class AnswerTest < ActiveSupport::TestCase
+# Test passage controller tests
+class TestPassagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
