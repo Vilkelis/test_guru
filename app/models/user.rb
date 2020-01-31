@@ -10,7 +10,7 @@ class User < ApplicationRecord
                        inverse_of: :author, dependent: :destroy
 
   validates :name, :email, presence: true
-  validates :name, _uniqueness: true, case_sensitive: false
+  validates :name,  uniqueness: true, case_sensitive: false
   validates :email, uniqueness: true, case_sensitive: false
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 

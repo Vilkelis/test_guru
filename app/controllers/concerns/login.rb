@@ -9,8 +9,11 @@ module Login
   # Was successfully login. Writing info to the session and redirect
   def login_success(user)
     session[:user_id] = user.id
+    target_url = session[:target_url]
+    session[:target_url] = nil
+
     flash[:info] = "Welcome #{user.name}, Guru!"
-    redirect_to session[:target_url] || root_path
+    redirect_to target_url || root_path
   end
 
   def login_invalid

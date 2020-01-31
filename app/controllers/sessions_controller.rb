@@ -23,17 +23,4 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to root_path
   end
-
-  private
-
-  def login_success(user)
-    session[:user_id] = user.id
-    flash[:info] = "Welcome #{user.name}, Guru!"
-    redirect_to session[:target_url] || root_path
-  end
-
-  def login_invalid
-    flash.now[:alert] = 'Invalid email or password.'
-    render :new
-  end
 end
