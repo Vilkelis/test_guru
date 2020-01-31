@@ -8,7 +8,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{name: 'Иван', email: 'ivan@yandex.ru'},{name: 'Петр', email: 'petr@yandex.ru'}])
+users = User.create!([{name: 'Иван', email: 'ivan@yandex.ru',
+                       password: 'ivan', password_confirmation: 'ivan'},
+                      {name: 'Петр', email: 'petr@yandex.ru',
+                       password: 'petr', password_confirmation: 'petr'}])
 
 categories = Category.create!([{title: 'Ruby'},{title: 'Ruby on Rails'}])
 
