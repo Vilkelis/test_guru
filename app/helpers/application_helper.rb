@@ -16,4 +16,8 @@ module ApplicationHelper
       content_tag :p, value, class: "flash #{key}"
     end.join(' ').html_safe
   end
+
+  def admin_tests_path
+    admin_root_path
+  end
 end

@@ -1,15 +1,11 @@
 <h1>Tests</h1>
 
-<%= render 'shared/notice' %>
-
-<%= link_to 'New test', new_test_path %>
-
 <table>
 	<tr>
 		<th>Test title</th>
 		<th>Level</th>
-		<th>Question count</th>
-		<th colspan="4">Actions</th>
+		<th>Questions count</th>
+		<th>Actions</th>
 	</tr>
   <%= render @tests %>
 </table>
