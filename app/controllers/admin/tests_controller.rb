@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy!
-    redirect_to admin_tests_path, notice: 'Test was successfully destroyed.'
+    redirect_to admin_root_path, notice: 'Test was successfully destroyed.'
   end
 
   def edit; end

@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # Auth with devise
   devise_for :users,
              path: :gurus,
-             path_names: { sign_in: :login, sugn_out: :logout }
+             path_names: { sign_in: :login, sugn_out: :logout },
+             controllers: { sessions: 'users/sessions' }
 
   # Tests for several users
   resources :tests, only: :index do
