@@ -4,7 +4,7 @@
 class Admin::TestsController < Admin::BaseController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_object_not_found
 
-  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :find_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all
@@ -17,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.own_tests.new(test_params)
     if @test.save
       redirect_to [:admin, @test], notice: 'Test was successfully created.'
     else
@@ -40,17 +40,10 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
-  end
-
   private
 
   def test_params
-    res = params.require(:test).permit(:title, :level, :category_id)
-    res[:author_id] = current_user.id if params[:action] == 'create'
-    res
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def find_test
