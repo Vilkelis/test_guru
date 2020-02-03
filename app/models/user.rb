@@ -2,17 +2,18 @@
 
 # Application user
 class User < ApplicationRecord
-  include Password
-
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :own_tests, class_name: 'Test', foreign_key: 'author_id',
-                       inverse_of: :author, dependent: :destroy
 
-  validates :name, :email, presence: true
-  validates :name,  uniqueness: true, case_sensitive: false
-  validates :email, uniqueness: true, case_sensitive: false
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
@@ -26,5 +27,9 @@ class User < ApplicationRecord
     end
 
     tests.send(level)
+  end
+
+  def admin?
+    is_a?(Admin)
   end
 end

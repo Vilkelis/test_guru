@@ -9,20 +9,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create!([{name: 'Иван', email: 'ivan@yandex.ru',
-                       password: 'ivan', password_confirmation: 'ivan'},
+                       password: 'ivanivan', password_confirmation: 'ivanivan'},
                       {name: 'Петр', email: 'petr@yandex.ru',
-                       password: 'petr', password_confirmation: 'petr'}])
+                       password: 'petrpetr', password_confirmation: 'petrpetr'}])
+users.each{ |u| u.confirm }
+
+admin = Admin.create!(name: 'Админ', surname: 'Админов',
+                       email: 'admin@yandex.ru',
+                       password: 'adminadmin',
+                       password_confirmation: 'adminadmin')
+admin.confirm
 
 categories = Category.create!([{title: 'Ruby'},{title: 'Ruby on Rails'}])
 
 tests = []
-tests << Test.create!(title: 'Ruby начальный', level: 0, category: categories[0], author: users[0])
-tests << Test.create!(title: 'Ruby продвинутый', level: 2, category: categories[0], author: users[0])
-tests << Test.create!(title: 'Rails начальный', level: 1, category: categories[1], author: users[1])
-tests << Test.create!(title: 'Rails продвинутый', level: 2, category: categories[1], author: users[1])
-
-#TestPassage.create!(user: users[0], test: tests[0])
-#TestPassage.create!(user: users[1], test: tests[2])
+tests << Test.create!(title: 'Ruby начальный', level: 0, category: categories[0], author: admin)
+tests << Test.create!(title: 'Ruby продвинутый', level: 2, category: categories[0], author: admin)
+tests << Test.create!(title: 'Rails начальный', level: 1, category: categories[1], author: admin)
+tests << Test.create!(title: 'Rails продвинутый', level: 2, category: categories[1], author: admin)
 
 questions = []
 questions << Question.create!(body: 'Укажите результат выражения 1++ ',

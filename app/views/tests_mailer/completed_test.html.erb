@@ -1,0 +1,25 @@
+<style>
+.test_passed_successfully {
+	color: green;
+}
+
+.test_passed_unsuccessfully {
+	color: red;	
+}
+</style>
+
+<h1>Hooray!</h1>
+
+<p>
+	Congratulations! You completed the <b><%= @test.title %></b> test.
+	<% if @test_passage.success? %>
+		<strong class="test_passed_successfully"> 
+			Test passed successfully (<%= @test_passage.success_percent %>%)
+		</strong>
+	<% else %>
+		<strong class="test_passed_unsuccessfully"> 
+			Test passed unsuccessfully (<%= @test_passage.success_percent %>%)
+		</strong>
+	<% end %>	
+	Why not to finish <%= link_to 'more', tests_url %>?
+</p>

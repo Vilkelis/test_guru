@@ -9,6 +9,7 @@ AllCops:
     - 'Gemfile'
     - 'Rakefile'
     - 'node_modules/**/*'
+    - 'config/initializers/devise.rb'
 
 Rails:
   Enabled: true
@@ -38,6 +39,7 @@ Style/StringLiterals:
   - 'config/environments/production.rb'
 
 Style/ClassAndModuleChildren:
+  Enabled: false
   # Exclude Rails generated files
   Exclude:
   - 'test/test_helper.rb'
@@ -52,3 +54,17 @@ Style/Documentation:
     - 'config/application.rb'
     - 'test/application_system_test_case.rb'
     - 'test/test_helper.rb'
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*.rb'
+Metrics/LineLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'app/jobs/application_job.rb'
+    - 'config/environments/*.rb'
+    - 'config/initializers/*.rb'
+    - 'config/*.rb'
+

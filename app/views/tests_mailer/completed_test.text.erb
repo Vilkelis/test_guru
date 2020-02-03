@@ -1,0 +1,10 @@
+Hooray!
+=======
+
+Congratulations! You completed the "<%= @test.title %>" test.
+<% if @test_passage.success? %>
+Test passed successfully (<%= @test_passage.success_percent %>%)
+<% else %>
+Test passed unsuccessfully (<%= @test_passage.success_percent %>%)
+<% end %>	
+Why not to finish more tests on <%= tests_url %>?
