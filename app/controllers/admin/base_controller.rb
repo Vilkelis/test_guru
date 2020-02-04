@@ -2,6 +2,7 @@
 
 # Base controller for admin controllers
 class Admin::BaseController < ApplicationController
+  include I18nHelper
   layout 'admin'
   before_action :admin_required!
 

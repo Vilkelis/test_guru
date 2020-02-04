@@ -1,11 +1,11 @@
 <tr>
 	<td><%= link_to question.body,  admin_question_path(question) %></td>
-	<td><%= link_to 'Show', admin_question_path(question) %></td>
-	<td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
+	<td><%= link_to i18n_cr('action.show'), admin_question_path(question) %></td>
+	<td><%= link_to i18n_cr('action.edit'), edit_admin_question_path(question) %></td>
 	<td>
-		<%= link_to 'Delete', 
+		<%= link_to i18n_cr('action.destroy'), 
 								admin_question_path(question),
 								method: :delete,
-								data: { confirm: 'Are you sure?'} %>
+								data: { confirm: i18n_cr('message.destroy.confirm', obj: i18n_mn(question))} %>
 	</td>
 </tr>

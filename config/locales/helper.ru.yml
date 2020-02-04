@@ -1,0 +1,31 @@
+ru:
+  helpers:
+    :true: 'Да'
+    :false: 'Нет'    
+    submit:
+      create: 'Создать'
+      update: 'Обновить'
+    select:
+      prompt: "Выберите значение"    
+    crud:
+      actions_title: 'Действия'
+      action:
+        show: 'Показать'
+        edit: 'Изменить'      
+        new:  'Создать'
+        destroy: 'Удалить'
+      action_full:
+        show: 'Показать %{obj}'      
+        edit: 'Изменить %{obj}'
+        new:  'Создать %{obj}'
+        destroy: 'Удалить %{obj}'
+      message:
+        destroy:
+          confirm: 'Вы уверены что хотите удалить %{obj}?'
+          success: '%{obj} успешно удален.'
+        create:
+          success: '%{obj} успешно создан.'
+        update:
+          success: '%{obj} успешно изменен.'
+        logout: 
+          confirm: 'Вы действительно хотите выйти?'

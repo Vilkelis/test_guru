@@ -1,0 +1,26 @@
+en:
+  helpers:
+    :true: 'Yes'
+    :false: 'No'    
+    submit:       
+      create: 'Create'
+      update: 'Update'   
+    select:
+      prompt: "Please select" 
+    crud:
+      actions_title: 'Actions'
+      action:
+        show: 'Show'
+        edit: 'Edit'
+        new:  'Create'
+        destroy: 'Delete' 
+      action_full:
+        show: 'Show %{obj}'      
+        edit: 'Edit %{obj}'
+        new:  'Create new %{obj}'
+        destroy: 'Delete %{obj}'      
+      message:  
+        destroy:
+          confirm: 'Are you sure you want to delete the %{obj}?'       
+        logout: 
+          confirm: 'Do you really want to logout?'

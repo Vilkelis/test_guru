@@ -1,14 +1,14 @@
 <p>
 	<% if user_signed_in? %>
-		<p class="app-welcome-title"> <%= TestGuru::Application::NAME %> actions </p>
-		<p class="app-welcome-text"> You can 
-			<%= link_to 'select test', tests_path %> to pass
+		<p class="app-welcome-title"> <%= t('.signed.welcome', app_name: TestGuru::Application::NAME) %> </p>
+		<p class="app-welcome-text">
+			<%= link_to t('.signed.choose_test'), tests_path %> 
 		</p>		
 	<% else %>
-		<p class="app-welcome-title"> Welcome to <%= TestGuru::Application::NAME %> </p>
-		<p class="app-welcome-text"> To use all of the application power please
-		  <%= link_to 'Sign up', new_user_registration_path %> or		   
-		  <%= link_to 'Login', new_user_session_path %> first
+		<p class="app-welcome-title"> <%= t '.welcome', app_name: TestGuru::Application::NAME %> </p>
+		<p class="app-welcome-text"> <%= t '.select_action_html', 
+		sign_up_link: (link_to t('.sign_up') , new_user_registration_path),
+		login_link: (link_to t('.login'), new_user_session_path) %>
 		</p>
 	<% end %>
 </p>

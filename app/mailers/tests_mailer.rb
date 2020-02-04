@@ -7,6 +7,7 @@ class TestsMailer < ApplicationMailer
     @test = test_passage.test
     @test_passage = test_passage
 
-    mail to: @user.email, subject: 'You just completed the Test Guru test!'
+    mail to: @user.email,
+         subject: t('.subject', app_name: TestGuru::Application::NAME)
   end
 end

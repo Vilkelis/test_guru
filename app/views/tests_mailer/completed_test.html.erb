@@ -8,18 +8,18 @@
 }
 </style>
 
-<h1>Hooray!</h1>
+<h1><%= t('.title') %></h1>
 
 <p>
-	Congratulations! You completed the <b><%= @test.title %></b> test.
+	<%= t('.info_html', test_title: @test.title) %>
 	<% if @test_passage.success? %>
 		<strong class="test_passed_successfully"> 
-			Test passed successfully (<%= @test_passage.success_percent %>%)
+			<%= t '.success_message', success_percent: @test_passage.success_percent %>
 		</strong>
 	<% else %>
 		<strong class="test_passed_unsuccessfully"> 
-			Test passed unsuccessfully (<%= @test_passage.success_percent %>%)
+			<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
 		</strong>
 	<% end %>	
-	Why not to finish <%= link_to 'more', tests_url %>?
+	<%= t '.action_html', link: (link_to t('.action_link'), tests_url(lang: I18n.locale) ) %>
 </p>

@@ -1,0 +1,37 @@
+ru:
+  activerecord:
+    models:
+      test: 
+        one: 'Тест'
+        few: 'Тесты'
+      question:
+        one: 'Вопрос'
+        few: 'Вопросы'  
+      answer:
+        one: 'Ответ'
+        few: 'Ответы'    
+    attributes:
+      test:
+        title: 'Наименование'
+        level: 'Уровень'
+        category_id: 'Категория'
+        category: 'Категория'
+        author_id: 'Автор'
+      test/questions:
+        count: 'Кол-во вопросов'
+      question:
+        body: 'Текст вопроса'
+        test_id: 'Тест'                   
+      answer:
+        body: 'Текст ответа'
+        correct: 'Корректный?'
+    values:
+      test:
+        level:
+          simple: 'простой'
+          medium: 'средний'
+          hard:   'сложный'
+    # errors:
+    #   messages:
+    #    required: 'должон быть вообще-то'
+        #blank111: 'не можем быть пустым'

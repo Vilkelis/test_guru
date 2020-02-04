@@ -1,6 +1,8 @@
-<h1>Passing the <%= @test_passage.test.title %></h1>
+<h1><%= t '.passing_title', test_title: @test_passage.test.title %></h1>
 <p>
-	question <%= @test_passage.current_question_number %> of <%= @test_passage.test.questions.count %>
+	<%= t  '.question_stat', 
+					current_question_number: @test_passage.current_question_number, 
+					total_questions_count: @test_passage.test.questions.count %>
 </p>
 <p>
 	<b>
@@ -17,5 +19,5 @@
 			<%= b.label %>
 		</p>
 	<% end %>
-	<%= form.submit 'Next' %>
+	<%= form.submit t('.submit.update') %>
 <% end %>

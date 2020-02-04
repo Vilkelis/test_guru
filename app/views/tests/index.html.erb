@@ -1,11 +1,11 @@
-<h1>Tests</h1>
+<h1><%= @tests.model.model_name.human(count:2) %></h1>
 
 <table>
 	<tr>
-		<th>Test title</th>
-		<th>Level</th>
-		<th>Questions count</th>
-		<th>Actions</th>
+		<th><%= i18n_ma(@tests, 'title') %></th>
+		<th><%= i18n_ma(@tests, 'level') %></th>
+		<th><%= i18n_ma(@tests, 'questions.count') %></th>
+		<th><%= i18n_cr('actions_title') %></th>
 	</tr>
   <%= render @tests %>
 </table>

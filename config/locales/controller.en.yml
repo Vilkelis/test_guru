@@ -1,0 +1,67 @@
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+en:
+  shared:
+    errors:
+      header:
+        one: 'One error was detected'
+        other: '%{count} errors was detected'
+    header_user_actions:
+      logout: 'Logout' 
+      login: 'Login'
+      sign_up: 'Sign up'      
+      guru: 'Guru'  
+    footer:
+      application_description: |
+                                 The education tests system:
+                                 Allows users to pass tests.
+                                 Users can also create their own tests.
+      project_description: 'Project created at the school "Thinknetica"'
+
+
+  admin:
+    header:
+      header: 'Admin panel'
+      title: 'Admin panel'  
+    tests:
+      back_button:
+        back: 'Back to the tests list'
+    questions:
+      back_button:
+        back: 'Back to the test'
+    answers:
+      back_button:
+        back: 'Back to the question'   
+
+  users:
+    session:
+      create:
+        hello:
+          noname: 'Hello, Guru!'
+          name: 'Hello, %{name}!'        
+
+  pages:
+    index:
+      welcome: 'Welcome to %{app_name}'
+      select_action_html: 'To use all of the application power please %{sign_up_link} or %{login_link} first'
+      sign_up: 'Sign up'
+      login: 'Login'  
+      signed:
+        welcome: '%{app_name} actions'
+        choose_test: 'Choose test to pass'              
+
+  tests:
+    test:
+      start: 'Start'
+
+  test_passages:
+    show:
+      passing_title: 'Passing the test "%{test_title}"'     
+      submit:
+        update: 'Next'
+      question_stat: 'Question %{current_question_number} of %{total_questions_count}' 
+    result:
+       title: 'The "%{test_title}" was Complited!'
+       success_message: 'Test passed successfully (%{success_percent}%)'
+       uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
+       back: 'To the tests list'          

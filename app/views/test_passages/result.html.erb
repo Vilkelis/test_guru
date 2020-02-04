@@ -1,15 +1,15 @@
-<h1>The "<%= @test_passage.test.title %>" was Complited!</h1>
+<h1><%= t '.title', test_title: @test_passage.test.title %></h1>
 
 <p>
 	<% if @test_passage.success? %>
 		<strong class="test_passed_successfully"> 
-			Test passed successfully (<%= @test_passage.success_percent %>%)
+			<%= t '.success_message', success_percent: @test_passage.success_percent %>
 		</strong>
 	<% else %>
 		<strong class="test_passed_unsuccessfully"> 
-			Test passed unsuccessfully (<%= @test_passage.success_percent %>%)
+			<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
 		</strong>
 	<% end %>
 </p>
  
-<%= render 'shared/back_button', caption: 'To the tests list', path:  tests_path %> 
+<%= render 'shared/back_button', caption: t('.back'), path:  tests_path %> 

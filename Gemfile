@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # Authorisation by device
 gem 'devise', '~> 4.0'
 
+# Localization tools
+gem 'rails-i18n'
+# Devise localization
+gem 'devise-i18n'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
