@@ -1,12 +1,12 @@
 <tr>
 	<td><%= link_to answer.body,  admin_answer_path(answer) %></td>
-	<td><%= answer.correct %></td>
-	<td><%= link_to 'Show', admin_answer_path(answer) %></td>
-	<td><%= link_to 'Edit', edit_admin_answer_path(answer) %></td>
+	<td><%= i18n_b(answer.correct) %></td>
+	<td><%= link_to i18n_cr('action.show'), admin_answer_path(answer) %></td>
+	<td><%= link_to i18n_cr('action.edit'), edit_admin_answer_path(answer) %></td>
 	<td>
-		<%= link_to 'Delete', 
+		<%= link_to i18n_cr('action.destroy'), 
 								admin_answer_path(answer),
 								method: :delete,
-								data: { confirm: 'Are you sure?'} %>
+								data: { confirm: i18n_cr('message.destroy.confirm', obj: i18n_mn(answer)) } %>
 	</td>
 </tr>

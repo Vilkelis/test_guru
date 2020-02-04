@@ -1,0 +1,18 @@
+  <div class="right">
+  	<% if user_signed_in? %>
+ 	  	<div><%= t '.guru' %>: <%= content_tag :b, current_user.name || current_user.email , class: 'user' %></div>
+ 		  <div>
+ 		  	<%= link_to t('.logout'), 
+			     				 destroy_user_session_path,
+						       method: :delete,
+							     data: { confirm: i18n_cr('message.logout.confirm') } %>
+			</div>
+	  <%else%>	 		  		   
+	    <div>
+		    <%= link_to t(".login") , new_user_session_path unless current_page?(new_user_session_path) %> 
+		  </div>
+		  <div>
+		  	<%= link_to t(".sign_up") , new_user_registration_path unless current_page?(new_user_registration_path) %> 		   
+		  </div>		  
+	  <% end %>
+  </div>	

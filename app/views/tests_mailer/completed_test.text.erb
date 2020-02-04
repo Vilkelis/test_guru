@@ -1,10 +1,10 @@
-Hooray!
-=======
+<%= t('.title') %>
+<%= t('.title_line_txt') %>
 
-Congratulations! You completed the "<%= @test.title %>" test.
+<%= t('.info_txt', test_title: @test.title) %>
 <% if @test_passage.success? %>
-Test passed successfully (<%= @test_passage.success_percent %>%)
+<%= t '.success_message', success_percent: @test_passage.success_percent %>
 <% else %>
-Test passed unsuccessfully (<%= @test_passage.success_percent %>%)
+<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
 <% end %>	
-Why not to finish more tests on <%= tests_url %>?
+<%= t '.action_txt', link: tests_url(lang: I18n.locale) %>

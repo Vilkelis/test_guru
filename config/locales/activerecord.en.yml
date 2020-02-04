@@ -1,0 +1,37 @@
+en:
+  activerecord:
+    models:       
+      test: 
+        one: 'Test'
+        other: 'Tests'           
+      question:
+        one: 'Question'
+        other: 'Questions'           
+      answer:
+        one: 'Answer'
+        other: 'Answers'                  
+    attributes:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+        category: 'Category'
+        author_id: 'Author'
+      test/questions:
+        count: 'Questions count'
+      question:
+        body: 'Question body'
+        test_id: 'Test'        
+      answer:
+        body: 'Answer body'
+        correct: 'Correct?'
+    values:
+      test:
+        level:
+          simple: 'simple'
+          medium: 'medium'
+          hard:   'hard'
+    # errors:
+    #   messages:
+    #     required: 'must be set'
+    #     blank: "can't be blank"

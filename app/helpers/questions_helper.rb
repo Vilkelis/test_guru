@@ -4,7 +4,6 @@
 module QuestionsHelper
   # title for Edit or New form of question
   def question_header(question)
-    action = question.new_record? ? 'Create New' : 'Edit'
-    "#{action} \"#{question.test.title}\" Question"
+    i18n_form_header(question)
   end
 end

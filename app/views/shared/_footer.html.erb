@@ -7,8 +7,8 @@
 											 TestGuru::Application::GITHUB_REPO),
 					  target: :blank %>
 <br>											 
-<%= TestGuru::Application::DESCRIPTION %>			
+<%= t('.application_description') %>	<!-- #TestGuru::Application::DESCRIPTION  -->		
 <br>								 
-<%= link_to TestGuru::Application::PROJECT_DESCRIPTION, 
+<%= link_to t('.project_description'),#TestGuru::Application::PROJECT_DESCRIPTION, 
 						TestGuru::Application::PROJECT_LINK, 
 						target: :blank %>

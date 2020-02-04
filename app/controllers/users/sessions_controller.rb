@@ -6,9 +6,9 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super do |resource|
       flash[:notice] = if resource.name.blank?
-                         'Hello, Guru!'
+                         t '.hello.noname'
                        else
-                         "Hello, #{resource.name}!"
+                         t '.hello.name', name: resource.name
                        end
     end
   end

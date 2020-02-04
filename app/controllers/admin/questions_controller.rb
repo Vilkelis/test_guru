@@ -20,7 +20,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
     if @question.save
       redirect_to [:admin, @question],
-                  notice: 'Question was successfully created.'
+                  notice: i18n_crm('success', obj: i18n_mn(@question))
     else
       render :new
     end
@@ -30,7 +30,7 @@ class Admin::QuestionsController < Admin::BaseController
   def destroy
     @question.destroy!
     redirect_to admin_test_path(@question.test),
-                notice: 'Question was successfully destroyed.'
+                notice: i18n_crm('success', obj: i18n_mn(@question))
   end
 
   # Question edit form
@@ -40,7 +40,7 @@ class Admin::QuestionsController < Admin::BaseController
   def update
     if @question.update(question_params)
       redirect_to [:admin, @question],
-                  notice: 'Question was successfully updated.'
+                  notice: i18n_crm('success', obj: i18n_mn(@question))
     else
       render :edit
     end

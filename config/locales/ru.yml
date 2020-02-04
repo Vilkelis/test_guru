@@ -1,9 +1,0 @@
-ru:
-  activerecord:
-    errors:
-      models:
-        question:
-          attributes:
-            body:
-              blank: "не заполнен"
-  

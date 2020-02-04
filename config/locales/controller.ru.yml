@@ -1,0 +1,67 @@
+ru:
+  shared:
+    errors:
+      header:
+        few: 'Обнаружено %{count} ошибки'
+        many: 'Обнаружено %{count} ошибок'
+        one: 'Обнаружена одна ошибка'
+        other: 'Обнаружено %{count} ошибки'
+    header_user_actions:
+      logout: 'Выход'
+      login: 'Вход'
+      sign_up: 'Регистрация'
+      guru: 'Гуру'  
+    footer:
+      application_description: |
+                                 Система учебных тестов:
+                                 Позволяет пользователям проходить тесты.
+                                 Так же пользователи могут создавать свои собственные тесты.
+      project_description: 'Учебный проект в школе Thinknetica'
+
+  admin:
+    header:
+      header: 'Администрирование'
+      title: 'Панель администратора'
+    tests:
+      back_button:
+        back: 'Назад в список тестов'
+    questions:
+      back_button:
+        back: 'Назад к просмотру теста'
+    answers:
+      back_button:
+        back: 'Назад к просмотру вопроса'
+
+  users:
+    sessions:
+      create:
+        hello:
+          noname: 'Привет, Гуру!'
+          name: 'Привет, %{name}!'
+
+  pages:
+    index:
+      welcome: 'Добро пожаловать в %{app_name}!'
+      select_action_html: 'Для использования нашего сервиса пожалуйста %{sign_up_link} или %{login_link}'
+      sign_up: 'Зарегистрируйтесь'
+      login: 'Войдите'
+      signed:
+        welcome: 'Действия %{app_name}'
+        choose_test: 'Пройти тест'
+
+  tests:
+    test:
+      start: 'Пройти тест'
+
+  test_passages:
+    show:
+      passing_title: 'Тест "%{test_title}"'
+      submit:
+        update: 'Дальше'
+      question_stat: 'Вопрос %{current_question_number} из %{total_questions_count}'
+    result:
+       title: 'Тест "%{test_title}" завершен!'
+       success_message: 'Тест пройдет успешно (%{success_percent}%)'
+       unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
+       back: 'Вернуться к списку тестов'
+

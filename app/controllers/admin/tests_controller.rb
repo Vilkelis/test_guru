@@ -19,7 +19,8 @@ class Admin::TestsController < Admin::BaseController
   def create
     @test = current_user.own_tests.new(test_params)
     if @test.save
-      redirect_to [:admin, @test], notice: 'Test was successfully created.'
+      redirect_to [:admin, @test],
+                  notice: i18n_crm('success', obj: i18n_mn(@test))
     else
       render :new
     end
@@ -27,14 +28,16 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy!
-    redirect_to admin_root_path, notice: 'Test was successfully destroyed.'
+    redirect_to admin_root_path,
+                notice: i18n_crm('success', obj: i18n_mn(@test))
   end
 
   def edit; end
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: 'Test was successfully updated.'
+      redirect_to [:admin, @test],
+                  notice: i18n_crm('success', obj: i18n_mn(@test))
     else
       render :edit
     end

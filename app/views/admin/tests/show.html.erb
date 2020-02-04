@@ -1,16 +1,16 @@
-<h1>Test: <%= @test.title %></h1>
+<h1><%= i18n_mn(@test) %>: <%= @test.title %></h1>
 
-<p><strong>Title: </strong><%= @test.title %></p>
-<p><strong>Level: </strong><%= test_level(@test) %></p>
-<p><strong>Category: </strong><%= @test.category.title %></p>
-<p><strong>Author: </strong><%= "#{@test.author.name} #{@test.author.surname}" %></p>
+<p><strong><%= i18n_ma(@test,'title') %>: </strong><%= @test.title %></p>
+<p><strong><%= i18n_ma(@test,'level') %>: </strong><%= test_level(@test) %></p>
+<p><strong><%= i18n_ma(@test,'category_id') %>: </strong><%= @test.category.title %></p>
+<p><strong><%= i18n_ma(@test,'author_id') %>: </strong><%= "#{@test.author.name} #{@test.author.surname}" %></p>
 
-<h2>Questions</h2>
-<%= link_to 'New question', new_admin_test_question_path(@test) %>
+<h2><%= i18n_mn(@test.questions, count: 2) %></h2>
+<%= link_to i18n_cr('action_full.new', obj: i18n_mn(@test.questions) ), new_admin_test_question_path(@test) %>
 <table>
 	<tr>
-		<th>Question body</th>
-		<th colspan="3">Actions</th>
+		<th><%= i18n_ma(@test.questions, 'body') %></th>
+		<th colspan="3"><%= i18n_cr('actions_title') %></th>
 	</tr>
   <%= render @test.questions %> 
 </table>

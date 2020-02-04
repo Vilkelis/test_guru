@@ -13,11 +13,10 @@ module TestsHelper
                  else
                    :none
                  end
-    "#{test.level}: #{level_name}"
+    "#{test.level}: #{t(level_name, scope: 'activerecord.values.test.level')}"
   end
 
   def test_header(test)
-    action = test.new_record? ? 'Create New' : 'Edit'
-    "#{action} Test"
+    i18n_form_header(test)
   end
 end

@@ -1,0 +1,13 @@
+ru:
+  tests_mailer:
+    completed_test:
+      subject: 'Ваш результат прохождения теста на %{app_name}!'
+      title: 'Ура!'
+      title_line_txt: '===='
+      info_html: 'Поздравляем! Вы завершили прохождение теста <b>%{test_title}</b>.'
+      info_txt: 'Поздравляем! Вы завершили прохождение теста "%{test_title}".'
+      success_message: 'Тест пройдет успешно (%{success_percent}%)'
+      unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'   
+      action_html: 'Почему бы не попробовать пройти %{link}?'  
+      action_txt: 'Почему бы не попробовать пройти еще один тест? %{link}'
+      action_link: 'еще один тест'
