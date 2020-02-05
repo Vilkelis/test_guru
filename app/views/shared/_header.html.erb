@@ -1,12 +1,22 @@
-<div class="nav">
-	<div class="app-title">
+<nav class="navbar navbar-expand-md navbar-dark bg-info">
+ 
 		<% if current_page?(root_path) %>
-			<%= TestGuru::Application::NAME %>
+			<span class="navbar-brand"><%= TestGuru::Application::NAME %></span> 
 		<% else %>
-		  <%= link_to TestGuru::Application::NAME, root_path%>
+		  <%= link_to TestGuru::Application::NAME, root_path , class: 'navbar-brand' %>
 		<% end %>
-	</div>
 
-	<%= render '/shared/header_user_actions' %>
-
-</div>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+	    <ul class="navbar-nav mr-auto">
+	    	<% if user_signed_in? && current_user.admin? %>
+		      <li class="nav-item">
+		        <%= link_to t('.admin_panel'), admin_root_path, class: 'nav-link' %>
+		      </li>
+	      <% end %>
+	    </ul>
+	    <%= render '/shared/header_user_actions' %>
+	  </div>
+</nav>

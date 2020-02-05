@@ -1,22 +1,28 @@
-<h1><%= answer_header(@answer) %></h1>
+<div class="row justify-content-center">
+  <div class='col-12 col-md-6'>
+    <h1><%= answer_header(@answer) %></h1>
 
-<p><strong><%= i18n_ma(@answer.question, 'body') %>: </strong><%= @answer.question.body %></p>
+    <p><strong><%= i18n_ma(@answer.question, 'body') %>: </strong><%= @answer.question.body %></p>
+    <div class="card">
+      <div class="card-body">
+        <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+          <%= render 'shared/errors', resource: @answer%>
+          <div class="form-group">
+            <%= form.label :body %> 
+            <%= form.text_area :body, id: :answer_body,  cols: 40, rows: 4, class: 'form-control'  %>
+          </div>  
 
-<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-  <%= render 'shared/errors', resource: @answer%>
-  <p>
-    <%= form.label :body %> <br>
-    <%= form.text_area :body, id: :answer_body,  cols: 40, rows: 4 %>
-  </p>  
+          <div class="form-group form-check">
+            <%= form.check_box :correct, class: 'form-check-input' %>            
+            <%= form.label :correct, id: :answer_correct, class: 'form-check-label' %>          
+          </div>      
 
-  <p>
-    <%= form.label :correct %>
-    <%= form.check_box :correct, id: :answer_correct %>
-  </p>
-
-  <div class="actions">
-    <%= form.submit %>
+          <div class="form-group">
+            <%= form.submit class: 'btn btn-secondary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'back_button' %>
   </div>
-<% end %>
-
-<%= render 'back_button' %>
+</div>

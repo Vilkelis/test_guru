@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  FLASH_CLASS = { notice: 'success',
+                  alert: 'warning',
+                  error: 'danger',
+                  default: 'info' }.freeze
+
   # Return current year for footer
   def current_year
     Time.zone.today.year
@@ -11,9 +16,8 @@ module ApplicationHelper
     "https://github.com/#{author}/#{repo}"
   end
 
-  def flash_message(flash)
-    flash.map do |key, value|
-      content_tag :p, value, class: "flash #{key}"
-    end.join(' ').html_safe
+  # Returns class for flash message according flash key
+  def flash_class(flash_key)
+    FLASH_CLASS[flash_key.to_sym] || FLASH_CLASS[:default]
   end
 end

@@ -1,15 +1,20 @@
-<h1><%= t '.title', test_title: @test_passage.test.title %></h1>
-
-<p>
-	<% if @test_passage.success? %>
-		<strong class="test_passed_successfully"> 
-			<%= t '.success_message', success_percent: @test_passage.success_percent %>
-		</strong>
-	<% else %>
-		<strong class="test_passed_unsuccessfully"> 
-			<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
-		</strong>
-	<% end %>
-</p>
- 
-<%= render 'shared/back_button', caption: t('.back'), path:  tests_path %> 
+<div class="jumbotron">
+	<div class="container">
+		<h1 class="display-4"><%= t '.title', test_title: @test_passage.test.title %></h1>
+		<hr class="my-4">
+		<p class="lead">
+			<% if @test_passage.success? %>
+				<strong class="text-success"> 
+					<%= t '.success_message', success_percent: @test_passage.success_percent %>
+				</strong>
+			<% else %>
+				<strong class="text-danger"> 
+					<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
+				</strong>
+			<% end %>
+		</p>
+		<div class="lead mt-4">
+      <%= link_to '< ' + t('.back'), tests_path, class: 'btn btn-info btn-lg' %> 			
+		</div>
+  </div>
+</div>

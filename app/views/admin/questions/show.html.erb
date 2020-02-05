@@ -1,19 +1,27 @@
-<h1><%= i18n_mn(@question) %>: <%= @question.body %></h1>
+ 
 
-<p><strong><%= i18n_ma(@question,'test_id') %>: </strong><%= @question.test.title %></p>
-<p><strong><%= i18n_ma(@question,'body') %>: </strong><%= @question.body %></p>
+		<h1><%= i18n_mn(@question) %>: <%= @question.body %></h1>
 
-<h2><%= i18n_mn(@question.answers, count: 2) %></h2>
+		<p><strong><%= i18n_ma(@question,'test_id') %>: </strong><%= @question.test.title %></p>
+		<p><strong><%= i18n_ma(@question,'body') %>: </strong><%= @question.body %></p>
 
-<%= link_to i18n_cr('action_full.new', obj: i18n_mn(@question.answers)), new_admin_question_answer_path(@question) %>
+		<h2><%= i18n_mn(@question.answers, count: 2) %></h2>
+		<p>
+			<%= link_to i18n_cr('action_full.new', obj: i18n_mn(@question.answers)), new_admin_question_answer_path(@question), class: 'btn btn-secondary' %>
+		</p>
+		<table class="table">
+			<thead>		
+				<tr>
+					<th><%= i18n_ma(@question.answers,'body') %></th>
+					<th><%= i18n_ma(@question.answers,'correct') %></th>
+					<th colspan="3"><%= i18n_cr('actions_title') %></th>
+				</tr>
+		  </thead>
+		  <tbody>
+			  <%= render @question.answers %>
+			<tbody>
+		</table>
+		
+		<%= render 'back_button' %>
 
-<table>
-	<tr>
-		<th><%= i18n_ma(@question.answers,'body') %></th>
-		<th><%= i18n_ma(@question.answers,'correct') %></th>
-		<th colspan="3"><%= i18n_cr('actions_title') %></th>
-	</tr>
-	<%= render @question.answers %>
-</table>
-
-<%= render 'back_button' %>
+ 

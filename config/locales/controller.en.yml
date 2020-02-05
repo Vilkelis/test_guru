@@ -6,6 +6,8 @@ en:
       header:
         one: 'One error was detected'
         other: '%{count} errors was detected'
+    header:
+      admin_panel: 'Admin panel'        
     header_user_actions:
       logout: 'Logout' 
       login: 'Login'
@@ -53,6 +55,8 @@ en:
   tests:
     test:
       start: 'Start'
+    index:
+      header: 'Choose test to pass'
 
   test_passages:
     show:

@@ -1,19 +1,26 @@
-<h1><%= i18n_mn(@test) %>: <%= @test.title %></h1>
 
-<p><strong><%= i18n_ma(@test,'title') %>: </strong><%= @test.title %></p>
-<p><strong><%= i18n_ma(@test,'level') %>: </strong><%= test_level(@test) %></p>
-<p><strong><%= i18n_ma(@test,'category_id') %>: </strong><%= @test.category.title %></p>
-<p><strong><%= i18n_ma(@test,'author_id') %>: </strong><%= "#{@test.author.name} #{@test.author.surname}" %></p>
+		<h1><%= i18n_mn(@test) %>: <%= @test.title %></h1>
 
-<h2><%= i18n_mn(@test.questions, count: 2) %></h2>
-<%= link_to i18n_cr('action_full.new', obj: i18n_mn(@test.questions) ), new_admin_test_question_path(@test) %>
-<table>
-	<tr>
-		<th><%= i18n_ma(@test.questions, 'body') %></th>
-		<th colspan="3"><%= i18n_cr('actions_title') %></th>
-	</tr>
-  <%= render @test.questions %> 
-</table>
+		<p><strong><%= i18n_ma(@test,'title') %>: </strong><%= @test.title %></p>
+		<p><strong><%= i18n_ma(@test,'level') %>: </strong><%= test_level(@test) %></p>
+		<p><strong><%= i18n_ma(@test,'category_id') %>: </strong><%= @test.category.title %></p>
+		<p><strong><%= i18n_ma(@test,'author_id') %>: </strong><%= "#{@test.author.name} #{@test.author.surname}" %></p>
 
-<%= render 'back_button' %> 
+		<h2><%= i18n_mn(@test.questions, count: 2) %></h2>
+		<p>
+			<%= link_to i18n_cr('action_full.new', obj: i18n_mn(@test.questions) ), new_admin_test_question_path(@test), class: 'btn btn-secondary' %>
+	  </p>
+		<table class="table">
+			<thead>			 
+				<tr>
+					<th><%= i18n_ma(@test.questions, 'body') %></th>
+					<th colspan="3"><%= i18n_cr('actions_title') %></th>
+				</tr>
+			</thead>
+			<tbody>
+		    <%= render @test.questions %> 
+		  </tbody>
+		</table>
+
+		<%= render 'back_button' %> 
 

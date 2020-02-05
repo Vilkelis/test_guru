@@ -1,23 +1,34 @@
-<h1><%= t '.passing_title', test_title: @test_passage.test.title %></h1>
-<p>
-	<%= t  '.question_stat', 
-					current_question_number: @test_passage.current_question_number, 
-					total_questions_count: @test_passage.test.questions.count %>
-</p>
-<p>
-	<b>
-		<%= @test_passage.current_question.body %>
-	</b>
-</p>
+<div class="row justify-content-center">
+  <div class='col-12 col-md-6'>
+		<h1><%= t '.passing_title', test_title: @test_passage.test.title %></h1>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-	<%= form.collection_check_boxes :answer_ids, 
-																	@test_passage.current_question.answers, 
-																	:id, :body, include_hidden: false do |b| %>
-		<p>
-			<%= b.check_box id: "answer_ids_#{b.object.id}" %>
-			<%= b.label %>
+		<p class="text-secondary">
+			<%= t  '.question_stat', 
+							current_question_number: @test_passage.current_question_number, 
+							total_questions_count: @test_passage.test.questions.count %>
 		</p>
-	<% end %>
-	<%= form.submit t('.submit.update') %>
-<% end %>
+		
+		<p class="lead">
+			<strong><%= @test_passage.current_question.body %></strong>
+		</p>
+    <div class="card">
+      <div class="card-body">			 
+				<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+
+					<%= form.collection_check_boxes :answer_ids, 
+																					@test_passage.current_question.answers, 
+																					:id, :body, include_hidden: false do |b| %>
+
+		        <div class="form-group form-check">
+		          <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>            
+		          <%= b.label class: 'form-check-label' %>          
+		        </div>
+						
+					<% end %>
+
+					<%= form.submit t('.submit.update') + ' >', class: 'btn btn-info' %>
+				<% end %>
+    	</div>
+  	</div>   					
+  </div>
+</div>
