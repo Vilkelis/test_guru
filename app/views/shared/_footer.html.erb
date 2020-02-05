@@ -1,14 +1,20 @@
-<hr>
-<%= current_year %>
-<%= TestGuru::Application::AUTHOR %>
-<br>
-<%= link_to TestGuru::Application::NAME, 
-						github_url(TestGuru::Application::GITHUB_AUTHOR, 
-											 TestGuru::Application::GITHUB_REPO),
-					  target: :blank %>
-<br>											 
-<%= t('.application_description') %>	<!-- #TestGuru::Application::DESCRIPTION  -->		
-<br>								 
-<%= link_to t('.project_description'),#TestGuru::Application::PROJECT_DESCRIPTION, 
+<hr class="my-4">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 col-md-6">			  
+				<%= current_year %>	<%= TestGuru::Application::AUTHOR %>			  
+				<p>
+					<%= link_to TestGuru::Application::NAME, 
+											github_url(TestGuru::Application::GITHUB_AUTHOR, 
+																 TestGuru::Application::GITHUB_REPO),
+										  target: :blank %>
+					<br>											 
+					<%= t('.application_description') %> 
+					<br>
+					<%= link_to t('.project_description'), 
 						TestGuru::Application::PROJECT_LINK, 
 						target: :blank %>
+				</p>											 			
+    </div>
+  </div>
+</div>

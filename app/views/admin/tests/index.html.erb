@@ -1,14 +1,20 @@
 <h1><%= i18n_mn(@tests, count: 2) %></h1>
 
-<%= link_to i18n_cr('action_full.new',obj: i18n_mn(@tests)), new_admin_test_path %>
+<p>
+<%= link_to i18n_cr('action_full.new',obj: i18n_mn(@tests)), new_admin_test_path, class: "btn btn-secondary" %>
+</p>
 
-<table>
-	<tr>
-		<th><%= i18n_ma(@tests, 'title') %></th>
-		<th><%= i18n_ma(@tests, 'level') %></th>
-		<th><%= i18n_ma(@tests, 'questions.count') %></th>
-		<th colspan="3"><%= i18n_cr('actions_title') %></th>
-	</tr>
-  <%= render @tests %>
+<table class="table">
+	<thead>
+		<tr>
+			<th><%= i18n_ma(@tests, 'title') %></th>
+			<th><%= i18n_ma(@tests, 'level') %></th>
+			<th><%= i18n_ma(@tests, 'questions.count') %></th>
+			<th colspan="3"><%= i18n_cr('actions_title') %></th>
+		</tr>
+	</thead>
+	<tbody>
+  	<%= render @tests %>
+  </tbody>
 </table>
 

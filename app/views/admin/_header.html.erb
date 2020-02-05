@@ -1,14 +1,11 @@
-<div class="nav">
-	<div class="app-title">
-		<% if current_page?(admin_root_path) %>
-			<%= t('.header') %> - <%= TestGuru::Application::NAME %>
+<nav class="navbar navbar-dark bg-dark">
+ 
+		<% if current_page?(root_path) %>
+			<span class="navbar-brand"><%= TestGuru::Application::NAME %> - <%= t('.header') %></span>
 		<% else %>
-		   <%= link_to t('.header') + ' - ' + TestGuru::Application::NAME, admin_root_path%>
+		  <%= link_to TestGuru::Application::NAME + ' - ' + t('.header'), root_path , class: 'navbar-brand' %>
 		<% end %>
-	</div>
 
+	  <%= render '/shared/header_user_actions' %>
 
-	<%= render '/shared/header_user_actions' %>				
-
-
-</div>
+</nav>

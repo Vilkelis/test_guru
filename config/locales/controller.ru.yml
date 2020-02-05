@@ -6,6 +6,8 @@ ru:
         many: 'Обнаружено %{count} ошибок'
         one: 'Обнаружена одна ошибка'
         other: 'Обнаружено %{count} ошибки'
+    header:
+      admin_panel: 'Панель администратора'
     header_user_actions:
       logout: 'Выход'
       login: 'Вход'
@@ -52,6 +54,8 @@ ru:
   tests:
     test:
       start: 'Пройти тест'
+    index:
+      header: 'Выберите тест для прохождения'
 
   test_passages:
     show:
@@ -64,4 +68,3 @@ ru:
        success_message: 'Тест пройдет успешно (%{success_percent}%)'
        unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
        back: 'Вернуться к списку тестов'
-

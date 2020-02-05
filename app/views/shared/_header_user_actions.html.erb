@@ -1,18 +1,20 @@
-  <div class="right">
+  <span class="navbar-text my-2 my-lg-0">
   	<% if user_signed_in? %>
- 	  	<div><%= t '.guru' %>: <%= content_tag :b, current_user.name || current_user.email , class: 'user' %></div>
- 		  <div>
+ 	  	<span><%= t '.guru' %>: <%= content_tag :b, current_user.name || current_user.email , class: 'user' %> </span> 
+ 	  	<span>|</span>
+ 		  <span>
  		  	<%= link_to t('.logout'), 
 			     				 destroy_user_session_path,
 						       method: :delete,
 							     data: { confirm: i18n_cr('message.logout.confirm') } %>
-			</div>
+			</span>
 	  <%else%>	 		  		   
-	    <div>
-		    <%= link_to t(".login") , new_user_session_path unless current_page?(new_user_session_path) %> 
-		  </div>
-		  <div>
+	    <span>
+		    <%= link_to t(".login") , new_user_session_path unless current_page?(new_user_session_path) %>  
+		  </span>
+		  <span><%= '|' unless current_page?(new_user_registration_path) || current_page?(new_user_session_path) %></span>
+		  <span>
 		  	<%= link_to t(".sign_up") , new_user_registration_path unless current_page?(new_user_registration_path) %> 		   
-		  </div>		  
+		  </span>		  
 	  <% end %>
-  </div>	
+  </span>	

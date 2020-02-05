@@ -1,14 +1,18 @@
-<p>
-	<% if user_signed_in? %>
-		<p class="app-welcome-title"> <%= t('.signed.welcome', app_name: TestGuru::Application::NAME) %> </p>
-		<p class="app-welcome-text">
-			<%= link_to t('.signed.choose_test'), tests_path %> 
-		</p>		
-	<% else %>
-		<p class="app-welcome-title"> <%= t '.welcome', app_name: TestGuru::Application::NAME %> </p>
-		<p class="app-welcome-text"> <%= t '.select_action_html', 
-		sign_up_link: (link_to t('.sign_up') , new_user_registration_path),
-		login_link: (link_to t('.login'), new_user_session_path) %>
-		</p>
-	<% end %>
-</p>
+<div class="jumbotron">
+	<div class="container">
+		<% if user_signed_in? %>
+			<h1 class="display-4"> <%= t('.signed.welcome', app_name: TestGuru::Application::NAME) %> </h1>
+			<hr class="my-4">
+			<div class="lead mt-4">
+				<%= link_to t('.signed.choose_test'), tests_path, class: 'btn btn-info btn-lg' %> 
+			</div>		
+		<% else %>
+			<h1 class="display-4"> <%= t '.welcome', app_name: TestGuru::Application::NAME %> </h1>
+			<hr class="my-4">
+			<p class="lead"> <%= t '.select_action_html', 
+			sign_up_link: (link_to t('.sign_up') , new_user_registration_path),
+			login_link: (link_to t('.login'), new_user_session_path) %>
+			</p>
+		<% end %>
+  </div>
+</div>

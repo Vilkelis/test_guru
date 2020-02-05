@@ -1,12 +1,16 @@
-<h1><%= @tests.model.model_name.human(count:2) %></h1>
+<h1><%= t('.header') %></h1>
 
-<table>
-	<tr>
-		<th><%= i18n_ma(@tests, 'title') %></th>
-		<th><%= i18n_ma(@tests, 'level') %></th>
-		<th><%= i18n_ma(@tests, 'questions.count') %></th>
-		<th><%= i18n_cr('actions_title') %></th>
-	</tr>
-  <%= render @tests %>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col"><%= i18n_ma(@tests, 'title') %></th>
+			<th scope="col"><%= i18n_ma(@tests, 'level') %></th>
+			<th scope="col"><%= i18n_ma(@tests, 'questions.count') %></th>
+			<th scope="col"><%= i18n_cr('actions_title') %></th>
+	  </tr>
+	</thead>
+	<tbody>
+    <%= render @tests %>
+  </tbody>
 </table>
 

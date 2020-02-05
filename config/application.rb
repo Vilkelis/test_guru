@@ -17,6 +17,17 @@ module TestGuru
     config.i18n.default_locale = :ru
     config.time_zone = 'Ekaterinburg'
 
+    # Overriding form error handing for bootstrap way
+    config.action_view.field_error_proc = proc { |html_tag|
+      class_attr_index = html_tag.index 'class="'
+
+      if class_attr_index
+        html_tag.insert class_attr_index + 7, 'is-invalid '
+      else
+        html_tag.insert html_tag.index('>'), ' class="is-invalid"'
+      end
+    }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

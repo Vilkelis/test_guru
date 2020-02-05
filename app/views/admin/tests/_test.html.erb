@@ -2,11 +2,13 @@
 	<td><%= link_to test.title, admin_test_path(test) %></td>
 	<td><%= test_level(test) %></td>
 	<td><%= test.questions.count %></td>
-	<td><%= link_to i18n_cr('action.show'), admin_test_path(test) %></td>
-	<td><%= link_to i18n_cr('action.edit'), edit_admin_test_path(test) %></td>
+
+	<td><%= link_to i18n_cr('action.show'), admin_test_path(test), class: "btn btn-secondary" %></td>
+	<td><%= link_to i18n_cr('action.edit'), edit_admin_test_path(test), class: "btn btn-secondary" %></td>
 	<td>
 		<%= link_to i18n_cr('action.destroy'), 
-								admin_test_path(test),
+								admin_test_path(test), 
+								class: "btn btn-secondary",
 								method: :delete,
 								data: { confirm: i18n_cr('message.destroy.confirm', obj: i18n_mn(test)) } %>
 	</td>
