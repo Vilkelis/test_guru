@@ -1,0 +1,6 @@
+<tr>
+	<td><%= link_to gist.question.body,  admin_question_path(gist.question) %></td>
+	<td><%= link_to gist.code, gist.url, target: 'blank' %></td>
+	<td><%= gist.user.email %></td>
+	<td><%= link_to t('.go_to_gist_url'), gist.url, class: "btn btn-secondary", target: 'blank' %></td>
+</tr>

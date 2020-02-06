@@ -9,7 +9,10 @@ ru:
         few: 'Вопросы'  
       answer:
         one: 'Ответ'
-        few: 'Ответы'    
+        few: 'Ответы'
+      gist:
+        one: 'Gist'    
+        few: 'Список Gist'
     attributes:
       test:
         title: 'Наименование'
@@ -25,13 +28,14 @@ ru:
       answer:
         body: 'Текст ответа'
         correct: 'Корректный?'
+      gist:
+        question_id: 'Вопрос'
+        user_id: 'Пользователь'
+        code: 'Код Gist'
+        url:  'Gist url'
     values:
       test:
         level:
           simple: 'простой'
           medium: 'средний'
           hard:   'сложный'
-    # errors:
-    #   messages:
-    #    required: 'должон быть вообще-то'
-        #blank111: 'не можем быть пустым'

@@ -1,0 +1,4 @@
+ru:
+  services:
+    gist_question:
+      gist_param_description: 'Вопрос по тесту "%{test}" из %{application}'       

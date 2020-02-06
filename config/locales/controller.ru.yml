@@ -24,6 +24,8 @@ ru:
     header:
       header: 'Администрирование'
       title: 'Панель администратора'
+      tests: 'Список тестов'
+      gists: 'Список gist'
     tests:
       back_button:
         back: 'Назад в список тестов'
@@ -33,6 +35,9 @@ ru:
     answers:
       back_button:
         back: 'Назад к просмотру вопроса'
+    gists:
+      gist:
+        go_to_gist_url: 'Показать Gist >'
 
   users:
     sessions:
@@ -63,8 +68,12 @@ ru:
       submit:
         update: 'Дальше'
       question_stat: 'Вопрос %{current_question_number} из %{total_questions_count}'
+      gist_question: 'Отправить Gist'
     result:
        title: 'Тест "%{test_title}" завершен!'
        success_message: 'Тест пройдет успешно (%{success_percent}%)'
        unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
        back: 'Вернуться к списку тестов'
+    gist:
+      success: 'Gist успешно сохранен!'
+      failure: 'Во время сохранения gist возникла ошибка'

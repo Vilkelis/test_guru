@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
  
 		<% if current_page?(root_path) %>
 			<span class="navbar-brand"><%= TestGuru::Application::NAME %> - <%= t('.header') %></span>
@@ -6,6 +6,22 @@
 		  <%= link_to TestGuru::Application::NAME + ' - ' + t('.header'), root_path , class: 'navbar-brand' %>
 		<% end %>
 
-	  <%= render '/shared/header_user_actions' %>
+
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+	    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item<%= ' active' if current_page?(admin_root_path)%>">
+		        <%= link_to  t('.tests'), admin_root_path, class: 'nav-link' %>
+		      </li>
+		      <li class="nav-item<%= ' active' if current_page?(admin_gists_path)%>">
+		        <%= link_to  t('.gists'), admin_gists_path, class: 'nav-link' %>
+		      </li>		      
+	    </ul>
+	    <%= render '/shared/header_user_actions' %>
+	  </div>
+
+	   
 
 </nav>

@@ -67,3 +67,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+# For Github Gist usage
+gem "octokit", "~> 4.0"
+
+# For load .env file to ENV variables
+# (we use this approach in all environments, not only :development and :test)
+gem 'dotenv-rails'
