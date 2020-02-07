@@ -75,5 +75,5 @@ ru:
        unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
        back: 'Вернуться к списку тестов'
     gist:
-      success: 'Gist успешно сохранен!'
+      success_html: '<a href="%{url}" target="blank">Gist</a> успешно сохранен!'
       failure: 'Во время сохранения gist возникла ошибка'

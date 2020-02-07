@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'client_results'
+
 # GitHub API interface
 class GitHubClient
   def initialize
@@ -13,15 +15,18 @@ class GitHubClient
   #   Keys should be the filename,
   #   the value a Hash with a :content key with text content of the Gist.
   def create_gist(params)
-    response = @client.create_gist(params)
+    res = ClientResults::GistCreateResult.new
+    begin
+      response = @client.create_gist(params)
 
-    # convert response to the standard format of result
-    res = { success: false }
-    if response.present?
-      res[:success] = true
-      res[:code] = response[:id]
-      res[:url] = response[:html_url]
-      res[:response] = response
+      # convert response to the standard format of result
+      if response.present?
+        res.code = response[:id]
+        res.url = response[:html_url]
+        res.data = response
+      end
+    rescue StandardError => e
+      res.data = e
     end
 
     res

@@ -2,10 +2,10 @@
 
 # Gist on question
 class GistQuestionService < BaseService
-  def initialize(question, client = nil)
+  def initialize(question, client = defailt_client)
     @question = question
     @test = question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
@@ -40,5 +40,9 @@ class GistQuestionService < BaseService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+
+  def defailt_client
+    GitHubClient.new
   end
 end

@@ -76,5 +76,5 @@ en:
        uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
     gist:
-      success: 'Gist saved successfully!'
+      success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
       failure: 'An error occurred while saving Gist'
