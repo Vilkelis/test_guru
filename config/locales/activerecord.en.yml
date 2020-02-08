@@ -9,7 +9,10 @@ en:
         other: 'Questions'           
       answer:
         one: 'Answer'
-        other: 'Answers'                  
+        other: 'Answers' 
+      gist:
+        one: 'Gist'    
+        other: 'Gists list'                         
     attributes:
       test:
         title: 'Title'
@@ -25,13 +28,14 @@ en:
       answer:
         body: 'Answer body'
         correct: 'Correct?'
+      gist:
+        question_id: 'Question'
+        user_id: 'User'
+        code: 'Gist code'
+        url:  'Gist url'        
     values:
       test:
         level:
           simple: 'simple'
           medium: 'medium'
           hard:   'hard'
-    # errors:
-    #   messages:
-    #     required: 'must be set'
-    #     blank: "can't be blank"

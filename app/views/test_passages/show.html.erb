@@ -26,6 +26,10 @@
 						
 					<% end %>
 
+				  <div class="form-group">
+				    <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post %>
+				  </div>
+
 					<%= form.submit t('.submit.update') + ' >', class: 'btn btn-info' %>
 				<% end %>
     	</div>

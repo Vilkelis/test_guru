@@ -1,0 +1,4 @@
+en:
+  services:
+    gist_question:
+      gist_param_description: 'A question about "%{test}" from %{application}'

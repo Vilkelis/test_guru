@@ -8,6 +8,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# load ENV variables from .env file
+Dotenv::Railtie.load
+
 module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -27,6 +30,8 @@ module TestGuru
         html_tag.insert html_tag.index('>'), ' class="is-invalid"'
       end
     }
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

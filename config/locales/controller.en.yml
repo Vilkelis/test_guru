@@ -25,6 +25,8 @@ en:
     header:
       header: 'Admin panel'
       title: 'Admin panel'  
+      tests: 'Tests'
+      gists: 'Gists'      
     tests:
       back_button:
         back: 'Back to the tests list'
@@ -34,6 +36,9 @@ en:
     answers:
       back_button:
         back: 'Back to the question'   
+    gists:
+      gist:
+        go_to_gist_url: 'Show Gist >'
 
   users:
     session:
@@ -64,8 +69,12 @@ en:
       submit:
         update: 'Next'
       question_stat: 'Question %{current_question_number} of %{total_questions_count}' 
+      gist_question: 'Gist question'
     result:
        title: 'The "%{test_title}" was Complited!'
        success_message: 'Test passed successfully (%{success_percent}%)'
        uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
+    gist:
+      success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
+      failure: 'An error occurred while saving Gist'

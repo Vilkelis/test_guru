@@ -9,5 +9,6 @@ class Question < ApplicationRecord
            foreign_key: 'current_question_id',
            inverse_of: :current_question,
            dependent: :restrict_with_error
+  has_many :gists, dependent: :destroy
   validates :body, presence: true
 end

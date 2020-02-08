@@ -5,6 +5,7 @@ module ApplicationHelper
                   alert: 'warning',
                   error: 'danger',
                   default: 'info' }.freeze
+  FLASH_HTML_SAFE_SUFFIX = '_html_safe'
 
   # Return current year for footer
   def current_year
@@ -18,6 +19,11 @@ module ApplicationHelper
 
   # Returns class for flash message according flash key
   def flash_class(flash_key)
-    FLASH_CLASS[flash_key.to_sym] || FLASH_CLASS[:default]
+    key = flash_key.to_s.delete_suffix(FLASH_HTML_SAFE_SUFFIX).to_sym
+    FLASH_CLASS[key] || FLASH_CLASS[:default]
+  end
+
+  def flash_html_safe?(flash_key)
+    flash_key.end_with?(FLASH_HTML_SAFE_SUFFIX)
   end
 end
