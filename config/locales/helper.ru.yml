@@ -14,9 +14,6 @@ ru:
         edit: 'Изменить'      
         new:  'Создать'
         destroy: 'Удалить'
-        save: 'Сохранить'
-        cancel: 'Отмена'
-        quick_edit: 'Быстрое редактирование'
       action_full:
         show: 'Показать %{obj}'      
         edit: 'Изменить %{obj}'

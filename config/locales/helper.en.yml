@@ -14,9 +14,6 @@ en:
         edit: 'Edit'
         new:  'Create'
         destroy: 'Delete' 
-        save: 'Save'
-        cancel: 'Cancel'
-        quick_edit: 'Quick edit'        
       action_full:
         show: 'Show %{obj}'      
         edit: 'Edit %{obj}'

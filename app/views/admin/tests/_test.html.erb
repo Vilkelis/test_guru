@@ -1,13 +1,5 @@
 <tr>
-	<td><%= link_to test.title, admin_test_path(test), class: 'test-title', data: {test_id: test.id} %>
-		  <%= link_to edit_admin_test_path(test), 
-		  		class: 'form-inline-link', 
-		  		data: {test_id: test.id},
-		      title: i18n_cr('action.quick_edit') do %>
-				<%= fa_icon 'edit', class: "ml-3 text-dark" %> 			
-			<% end %>
-			<%= render 'form_inline' , {test: @test == test ? @test : test} %>
-	</td>
+	<td><%= link_to test.title, admin_test_path(test) %></td>
 	<td><%= test_level(test) %></td>
 	<td><%= test.questions.count %></td>
 

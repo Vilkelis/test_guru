@@ -23,10 +23,6 @@ class TestPassage < ApplicationRecord
     ((correct_questions.to_f / test.questions.count) * 100.0).round
   end
 
-  def percent_finished
-    ((current_question_number.to_f / test.questions.count) * 100.0).round
-  end
-
   def success?
     success_percent >= PASSED_SUCCESSFULLY_LIMIT
   end
