@@ -28,6 +28,11 @@ Metrics/LineLength:
   - 'config/environments/production.rb'
   - 'config/puma.rb'
   - 'config/application.rb'
+  - 'db/migrate/*.rb'
+  - 'app/jobs/application_job.rb'
+  - 'config/environments/*.rb'
+  - 'config/initializers/*.rb'
+  - 'config/*.rb'  
 
 Style/StringLiterals:
   # Exclude Rails generated files
@@ -60,11 +65,9 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/*.rb'
-Metrics/LineLength:
+
+Metrics/BlockLength:
   Exclude:
-    - 'db/migrate/*.rb'
-    - 'app/jobs/application_job.rb'
-    - 'config/environments/*.rb'
-    - 'config/initializers/*.rb'
-    - 'config/*.rb'
+    - 'config/routes.rb'
+
 

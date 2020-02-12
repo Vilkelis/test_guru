@@ -2,6 +2,12 @@
   <div class='col-12 col-md-6'>
 		<h1><%= t '.passing_title', test_title: @test_passage.test.title %></h1>
 
+
+		<%= content_tag :div, '', class: 'progress', 
+		                data: { percent: @test_passage.percent_finished, 
+		                			  color_class: 'bg-info' }%>
+		
+
 		<p class="text-secondary">
 			<%= t  '.question_stat', 
 							current_question_number: @test_passage.current_question_number, 
