@@ -31,6 +31,7 @@ function formInlineEditHandler(testId) {
 	let link = document.querySelector('.form-inline-link[data-test-id="'+ testId +'"]')
 	let testTitle = document.querySelector('.test-title[data-test-id="'+ testId +'"]')
 	let formInline = document.querySelector('.form-inline[data-test-id="'+ testId +'"]')
+	let formInlineInput = formInline.querySelector('.form-inline-input')
 	
 	//Cancel all of the inline forms
   formsInlineCancelAll()
@@ -39,6 +40,7 @@ function formInlineEditHandler(testId) {
 	formInline.classList.remove('d-none')
 	link.classList.add('d-none')
 	testTitle.classList.add('d-none')
+	formInlineInput.focus()
 }
 
 
