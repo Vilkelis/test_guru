@@ -3,9 +3,17 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th scope="col"><%= i18n_ma(@tests, 'title') %></th>
-			<th scope="col"><%= i18n_ma(@tests, 'level') %></th>
-			<th scope="col"><%= i18n_ma(@tests, 'questions.count') %></th>
+			<th scope="col" class="sort-by-title pointer"><%= i18n_ma(@tests, 'title') %> 
+				<%= fa_icon 'arrow-up', class: "text-dark d-none sorted-up" %> 
+				<%= fa_icon 'arrow-down', class: "text-dark d-none sorted-down" %></th>
+			<th scope="col" class="sort-by-title pointer"><%= i18n_ma(@tests, 'level') %>
+				<%= fa_icon 'arrow-up', class: "text-dark d-none sorted-up" %> 
+				<%= fa_icon 'arrow-down', class: "text-dark d-none sorted-down" %>				
+			</th>
+			<th scope="col" class="sort-by-title pointer"><%= i18n_ma(@tests, 'questions.count') %>
+				<%= fa_icon 'arrow-up', class: "text-dark d-none sorted-up" %> 
+				<%= fa_icon 'arrow-down', class: "text-dark d-none sorted-down" %>				
+			</th>
 			<th scope="col"><%= i18n_cr('actions_title') %></th>
 	  </tr>
 	</thead>

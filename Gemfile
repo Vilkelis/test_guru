@@ -74,3 +74,6 @@ gem "octokit", "~> 4.0"
 # For load .env file to ENV variables
 # (we use this approach in all environments, not only :development and :test)
 gem 'dotenv-rails'
+
+# Icons for application
+gem 'font_awesome5_rails'

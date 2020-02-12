@@ -16,8 +16,10 @@
           </div>
 
          <div class="form-group">
-            <%= f.label :password_confirmation, t('.confirm_new_password') %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'  %>
+            <%= f.label :password_confirmation, t('.confirm_new_password') %>
+            <%= fa_icon 'exclamation-circle', class: "user-passwords-not-match text-danger d-none"%>  
+            <%= fa_icon 'check-circle', class: "user-passwords-match text-success d-none" %>             
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'%>           
           </div>
 
           <div class="form-group">
