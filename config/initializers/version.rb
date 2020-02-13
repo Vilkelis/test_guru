@@ -6,7 +6,7 @@ module TestGuru
     # see semver.org
     VERSION = '0.1.0'
     AUTHOR = 'Stepan Golovanov'
-    NAME = 'Test Guru'
+    NAME = 'Test Guru Do'
     GITHUB_AUTHOR = 'Vilkelis'
     GITHUB_REPO = 'test_guru'
     PROJECT_LINK = 'https://thinknetica.com'
