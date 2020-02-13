@@ -7,7 +7,7 @@ en:
       info_html: 'Congratulations! You completed the <b>%{test_title}</b> test.'
       info_txt: 'Congratulations! You completed the "%{test_title}" test.'
       success_message: 'Test passed successfully (%{success_percent}%)'
-      uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)'    
+      unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)'    
       action_html: 'Why not to finish %{link}?'  
       action_txt: 'Why not to finish more? %{link}'  
       action_link: 'more'      

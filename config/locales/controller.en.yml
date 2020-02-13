@@ -74,7 +74,7 @@ en:
     result:
        title: 'The "%{test_title}" was Complited!'
        success_message: 'Test passed successfully (%{success_percent}%)'
-       uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
+       unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
