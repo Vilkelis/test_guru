@@ -15,7 +15,7 @@ users = User.create!([{name: 'Иван', email: 'ivan@yandex.ru',
 users.each{ |u| u.confirm }
 
 admin = Admin.create!(name: 'Админ', surname: 'Админов',
-                       email: 'admin@yandex.ru',
+                       email: 'vilkelis@yandex.ru',
                        password: 'adminadmin',
                        password_confirmation: 'adminadmin')
 admin.confirm
