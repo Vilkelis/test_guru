@@ -4,6 +4,9 @@
 Rails.application.routes.draw do
   root 'pages#index'
 
+  get 'feedback', to: 'feedbacks#new'
+  post 'feedback', to: 'feedbacks#create'
+
   # Auth with devise
   devise_for :users,
              path: :gurus,

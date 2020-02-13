@@ -69,5 +69,6 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - 'config/routes.rb'
+    - 'config/environments/production.rb'
 
 

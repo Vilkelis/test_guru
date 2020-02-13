@@ -1,0 +1,10 @@
+<%= t('.title') %>
+<%= t('.title_line_txt') %>
+
+<%= i18n_ma(@feedback, 'name')%>: <%= @feedback.name%>
+<%= i18n_ma(@feedback, 'email')%>: <%= @feedback.email%> 
+
+<%= i18n_ma(@feedback, 'message')%>:
+------------------------------------
+<%= @feedback.message%>
+------------------------------------

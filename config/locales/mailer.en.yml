@@ -11,3 +11,8 @@ en:
       action_html: 'Why not to finish %{link}?'  
       action_txt: 'Why not to finish more? %{link}'  
       action_link: 'more'      
+  feedbacks_mailer:
+    feedback:
+      subject: 'Feedback message from %{app_name} site'
+      title: 'Feedback'
+      title_line_txt: '========'      

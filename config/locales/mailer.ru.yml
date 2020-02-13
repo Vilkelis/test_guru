@@ -11,3 +11,8 @@ ru:
       action_html: 'Почему бы не попробовать пройти %{link}?'  
       action_txt: 'Почему бы не попробовать пройти еще один тест? %{link}'
       action_link: 'еще один тест'
+  feedbacks_mailer:
+    feedback:
+      subject: 'Обратная связь с сайта %{app_name}'
+      title: 'Обратная связь'
+      title_line_txt: '=============='
