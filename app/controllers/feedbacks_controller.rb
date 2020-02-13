@@ -18,13 +18,10 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     if @feedback.valid?
-      if user_signed_in?
-        redirect_to tests_path,
-                    notice: t('.notice_success')
-      else
-        redirect_to root_path,
-                    notice: t('.notice_success')
-      end
+      FeedBackMailer.feedback(@feedback)
+
+      redirect_path = user_signed_in? ? tests_path : root_path
+      redirect_to redirect_path, notice: t('.notice_success')
     else
       render :new
     end
