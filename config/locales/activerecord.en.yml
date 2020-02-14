@@ -12,7 +12,10 @@ en:
         other: 'Answers' 
       gist:
         one: 'Gist'    
-        other: 'Gists list'                         
+        other: 'Gists list'   
+      feedback:
+        one: 'Feedback message'
+        other: 'Feedback messages'                              
     attributes:
       test:
         title: 'Title'
@@ -32,7 +35,11 @@ en:
         question_id: 'Question'
         user_id: 'User'
         code: 'Gist code'
-        url:  'Gist url'        
+        url:  'Gist url'  
+      feedback:
+        name: 'Name'
+        email: 'Email'
+        message: 'Message'
     values:
       test:
         level:

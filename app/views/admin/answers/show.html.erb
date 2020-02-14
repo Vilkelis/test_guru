@@ -2,6 +2,10 @@
 
 		<h1><%= i18n_mn(@answer) %>: <%= @answer.body%></h1>
 
+		<p><%= link_to i18n_cr('action_full.edit', obj: i18n_mn(@answer)), 
+									 edit_admin_answer_path(@answer), 
+									 class: "btn btn-secondary" %></p>
+
 		<p><strong><%= i18n_ma(@answer.question, 'body') %>: </strong><%= @answer.question.body %></p>
 		<p><strong><%= i18n_ma(@answer, 'body') %>: </strong><%= @answer.body %></p>
 		<p><strong><%= i18n_ma(@answer, 'correct') %>: </strong><%= @answer.correct %></p>

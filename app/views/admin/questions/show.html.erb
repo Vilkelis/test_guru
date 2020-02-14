@@ -1,6 +1,10 @@
  
 
 		<h1><%= i18n_mn(@question) %>: <%= @question.body %></h1>
+		
+		<p><%= link_to i18n_cr('action_full.edit', obj: i18n_mn(@question)), 
+									 edit_admin_question_path(@question), 
+									 class: "btn btn-secondary" %></p>
 
 		<p><strong><%= i18n_ma(@question,'test_id') %>: </strong><%= @question.test.title %></p>
 		<p><strong><%= i18n_ma(@question,'body') %>: </strong><%= @question.body %></p>

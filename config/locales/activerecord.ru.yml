@@ -13,6 +13,9 @@ ru:
       gist:
         one: 'Gist'    
         few: 'Список Gist'
+      feedback:
+        one: 'Сообщение'
+        few: 'Сообщения'
     attributes:
       test:
         title: 'Наименование'
@@ -33,6 +36,10 @@ ru:
         user_id: 'Пользователь'
         code: 'Код Gist'
         url:  'Gist url'
+      feedback:
+        name: 'Имя'
+        email: 'E-mail'
+        message: 'Сообщение'        
     values:
       test:
         level:

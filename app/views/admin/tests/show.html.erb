@@ -1,6 +1,10 @@
 
 		<h1><%= i18n_mn(@test) %>: <%= @test.title %></h1>
 
+		<p><%= link_to i18n_cr('action_full.edit', obj: i18n_mn(@test)), 
+									 edit_admin_test_path(@test), 
+									 class: "btn btn-secondary" %></p>
+
 		<p><strong><%= i18n_ma(@test,'title') %>: </strong><%= @test.title %></p>
 		<p><strong><%= i18n_ma(@test,'level') %>: </strong><%= test_level(@test) %></p>
 		<p><strong><%= i18n_ma(@test,'category_id') %>: </strong><%= @test.category.title %></p>

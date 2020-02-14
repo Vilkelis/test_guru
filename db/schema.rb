@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_090954) do
+ActiveRecord::Schema.define(version: 2020_02_13_063514) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_090954) do
     t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id", "id"], name: "index_questions_on_test_id_and_id"
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
@@ -55,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_090954) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
+    t.index ["user_id", "test_id", "id"], name: "index_test_passages_on_user_id_and_test_id_and_id", order: { id: :desc }
     t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
 

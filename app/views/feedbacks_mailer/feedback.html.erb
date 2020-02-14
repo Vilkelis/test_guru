@@ -1,0 +1,15 @@
+<h1><%= t('.title') %></h1>
+<p>
+<strong><%= i18n_ma(@feedback, 'name')%>:</strong>
+<%= @feedback.name%>
+</p>
+<p>
+<strong><%= i18n_ma(@feedback, 'email')%>:</strong>
+<%= @feedback.email%> 
+</p>
+<p><br>
+<strong><%= i18n_ma(@feedback, 'message')%>:</strong><br>
+<hr>
+<%= @feedback.message%>
+<hr>
+</p>

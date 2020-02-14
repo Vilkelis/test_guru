@@ -28,10 +28,12 @@ function formInlineEditLinkHandler(event) {
 
 
 function formInlineEditHandler(testId) {
+	let formInline = document.querySelector('.form-inline[data-test-id="'+ testId +'"]')
+	if (!formInline) { return }
+		
+	let formInlineInput = formInline.querySelector('.form-inline-input')
 	let link = document.querySelector('.form-inline-link[data-test-id="'+ testId +'"]')
 	let testTitle = document.querySelector('.test-title[data-test-id="'+ testId +'"]')
-	let formInline = document.querySelector('.form-inline[data-test-id="'+ testId +'"]')
-	let formInlineInput = formInline.querySelector('.form-inline-input')
 	
 	//Cancel all of the inline forms
   formsInlineCancelAll()

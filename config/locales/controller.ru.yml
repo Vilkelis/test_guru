@@ -14,12 +14,13 @@ ru:
       sign_up: 'Регистрация'
       guru: 'Гуру'  
     footer:
+      feedback: 'Обратная связь'
+    footer_app_info:
       application_description: |
                                  Система учебных тестов:
                                  Позволяет пользователям проходить тесты.
                                  Так же пользователи могут создавать свои собственные тесты.
       project_description: 'Учебный проект в школе Thinknetica'
-
   admin:
     header:
       header: 'Администрирование'
@@ -77,3 +78,12 @@ ru:
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> успешно сохранен!'
       failure: 'Во время сохранения gist возникла ошибка'
+
+  feedbacks:     
+    form:
+      title: 'Обратная связь'
+      instructions: 'Пожалуйста, заполните поля формы и нажмите на кнопку "Отправить сообщение"'
+      back: 'Назад в список тестов'   
+      submit: 'Отправить сообщение'
+    create:
+      notice_success: 'Ваше сообщение успешно отправлено!'

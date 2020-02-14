@@ -44,7 +44,8 @@ module I18nHelper
 
   # Returns model class from ActiveRecord of AcitveRecord_Relation object
   def model_class(resource)
-    if resource.is_a?(ActiveRecord::Base)
+    if resource.is_a?(ActiveRecord::Base) ||
+       resource.is_a?(ApplicationRecordNotable)
       resource.class
     else
       resource.model

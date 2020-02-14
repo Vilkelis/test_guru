@@ -26,4 +26,8 @@ module ApplicationHelper
   def flash_html_safe?(flash_key)
     flash_key.end_with?(FLASH_HTML_SAFE_SUFFIX)
   end
+
+  def current_action?(controller_action)
+    controller_action == [params[:controller], params[:action]].join('#')
+  end
 end

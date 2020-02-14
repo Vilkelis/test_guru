@@ -14,12 +14,13 @@ en:
       sign_up: 'Sign up'      
       guru: 'Guru'  
     footer:
+      feedback: 'Feedback'
+    footer_app_info:
       application_description: |
                                  The education tests system:
                                  Allows users to pass tests.
                                  Users can also create their own tests.
       project_description: 'Project created at the school "Thinknetica"'
-
 
   admin:
     header:
@@ -38,7 +39,7 @@ en:
         back: 'Back to the question'   
     gists:
       gist:
-        go_to_gist_url: 'Show Gist >'
+        go_to_gist_url: 'Show Gist >'        
 
   users:
     session:
@@ -73,8 +74,17 @@ en:
     result:
        title: 'The "%{test_title}" was Complited!'
        success_message: 'Test passed successfully (%{success_percent}%)'
-       uncuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
+       unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
       failure: 'An error occurred while saving Gist'
+
+  feedbacks:
+    form:
+      title: 'Feedback'
+      instructions: 'Please fill feedback form and press Send button'
+      back: 'Back to the tests list'
+      submit: 'Send feedback message'
+    create:
+      notice_success: 'Your feedback message was sent successfully!'      
