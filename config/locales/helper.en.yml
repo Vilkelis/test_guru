@@ -25,5 +25,10 @@ en:
       message:  
         destroy:
           confirm: 'Are you sure you want to delete the %{obj}?'       
+          success: '%{obj} deleted successfully.'          
+        create:
+          success: '%{obj} created successfully.'
+        update:
+          success: '%{obj} updated successfully.'
         logout: 
           confirm: 'Do you really want to logout?'

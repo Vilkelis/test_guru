@@ -4,7 +4,8 @@
 class Category < ApplicationRecord
   default_scope { order(title: :asc) }
 
-  has_many :tests, dependent: :restrict_with_exception
+  has_many :tests, dependent: :restrict_with_error
+  has_many :badges, dependent: :restrict_with_error
 
   scope :for_title, lambda { |title|
                       where(title: title)

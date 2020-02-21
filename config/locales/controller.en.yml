@@ -7,7 +7,8 @@ en:
         one: 'One error was detected'
         other: '%{count} errors was detected'
     header:
-      admin_panel: 'Admin panel'        
+      admin_panel: 'Admin panel' 
+      user_badges: 'My badges'       
     header_user_actions:
       logout: 'Logout' 
       login: 'Login'
@@ -27,7 +28,8 @@ en:
       header: 'Admin panel'
       title: 'Admin panel'  
       tests: 'Tests'
-      gists: 'Gists'      
+      gists: 'Gists'    
+      badges: 'Badges'
     tests:
       back_button:
         back: 'Back to the tests list'
@@ -40,6 +42,9 @@ en:
     gists:
       gist:
         go_to_gist_url: 'Show Gist >'        
+    badges:
+      back_button:
+        back: 'Back to the badges list'
 
   users:
     session:
@@ -76,6 +81,9 @@ en:
        success_message: 'Test passed successfully (%{success_percent}%)'
        unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
+       bagges_gived:
+           one: 'Congratulations! You have earned the badge:'
+           few: 'Congratulations! You have earned badges:'         
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
       failure: 'An error occurred while saving Gist'
@@ -88,3 +96,9 @@ en:
       submit: 'Send feedback message'
     create:
       notice_success: 'Your feedback message was sent successfully!'      
+
+  user_badges:
+    index:
+      header: 'Badges'
+      header_my_badges: 'My badges'
+      header_all_badges: 'Available badges'      

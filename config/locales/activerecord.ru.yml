@@ -1,3 +1,4 @@
+
 ru:
   activerecord:
     models:
@@ -16,6 +17,12 @@ ru:
       feedback:
         one: 'Сообщение'
         few: 'Сообщения'
+      badge:
+        one: 'Значок'
+        few: 'Значки'  
+      user_badge:
+        one: 'Значок'
+        few: 'Значки'        
     attributes:
       test:
         title: 'Наименование'
@@ -39,10 +46,42 @@ ru:
       feedback:
         name: 'Имя'
         email: 'E-mail'
-        message: 'Сообщение'        
+        message: 'Сообщение'      
+      badge:
+        title: 'Наименование'
+        rule: 'Правило выдачи'
+        image_file_name: 'Картинка' 
+        category_id: 'Категория'          
+        category: 'Категория'          
+        test_id: 'Тест'
+        test: 'Тест'
+      user_badge:
+        badge: 'Значок'  
+        created_at: 'Время получения'
     values:
       test:
         level:
           simple: 'простой'
           medium: 'средний'
           hard:   'сложный'
+      badge:
+        rule:
+          all_of_category_passage: 'Пройдены все тесты категории'
+          first_attempt_passage: 'Тест пройден с первой попытки'
+          all_of_hard_level_passage: 'Пройдены все тесты уровня "сложный"'
+          all_of_medium_level_passage: 'Пройдены все тесты уровня "средний"'
+          all_of_simple_level_passage: 'Пройдены все тесты уровня "легкий"'          
+          no_rule: '-'
+        rule_with_object:
+          all_of_category_passage: 'Пройдены все тесты категории "%{object_title}"'
+          first_attempt_passage: 'Тест "%{object_title}" пройден с первой попытки'
+          all_of_hard_level_passage: 'Пройдены все тесты уровня "сложный"'
+          all_of_medium_level_passage: 'Пройдены все тесты уровня "средний"'
+          all_of_simple_level_passage: 'Пройдены все тесты уровня "легкий"'          
+          no_rule: '-'          
+    errors:
+      messages:
+        badge:
+          invalid_rule_value: ': не верное значение правила'
+        answer:
+          too_many_answers: 'Слишком много вариантов ответов у вопроса'

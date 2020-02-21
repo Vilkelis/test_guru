@@ -15,7 +15,13 @@ en:
         other: 'Gists list'   
       feedback:
         one: 'Feedback message'
-        other: 'Feedback messages'                              
+        other: 'Feedback messages'         
+      badge:
+        one: 'Badge'
+        other: 'Badges' 
+      user_badge:
+        one: 'Badge'
+        other: 'Badges' 
     attributes:
       test:
         title: 'Title'
@@ -40,9 +46,41 @@ en:
         name: 'Name'
         email: 'Email'
         message: 'Message'
+      badge:
+        title: 'Title'
+        rule: 'Rule'
+        image_file_name: 'Image'     
+        category_id: 'Category'          
+        category: 'Category'          
+        test_id: 'Test'
+        test: 'Test'   
+      user_badge:
+        badge: 'Badge'  
+        created_at: 'Taken at'                     
     values:
       test:
         level:
           simple: 'simple'
           medium: 'medium'
           hard:   'hard'
+      badge:
+        rule:
+          all_of_category_passage: 'Passed all category tests'
+          first_attempt_passage: 'Test passed on the first attempt'
+          all_of_hard_level_passage: 'Passed all tests of "hard" level'
+          all_of_medium_level_passage: 'Passed all tests of "medium" level'
+          all_of_simple_level_passage: 'Passed all tests of "simple" level'
+          no_rule: '-'      
+        rule_with_object:
+          all_of_category_passage: 'Passed all tests of the category "%{object_title}"'
+          first_attempt_passage: 'Test "%{object_title}" passed on the first attempt'
+          all_of_hard_level_passage: 'Passed all tests of "hard" level'
+          all_of_medium_level_passage: 'Passed all tests of "medium" level'
+          all_of_simple_level_passage: 'Passed all tests of "simple" level'
+          no_rule: '-' 
+    errors:
+      messages:
+        badge:
+          invalid_rule_value: ' has invalid value'
+        answer:
+          too_many_answers: 'Too many answers for one question.'

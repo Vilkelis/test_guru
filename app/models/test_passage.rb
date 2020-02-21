@@ -7,8 +7,21 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   before_validation :before_validation_set_next_question
+
+  scope :success_completed_by_user,
+        ->(user) { where(user: user, success_completed: true) }
+
+  # Returns array of test_ids that completed successfully
+  # by the user and after the test_passage (passed by parameters)
+  scope :success_completed_after_passage,
+        lambda { |user_id, test_passage_id|
+          where(user_id: user_id, success_completed: true)
+            .where('id > ?', test_passage_id).distinct.pluck(:test_id)
+        }
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -17,6 +30,11 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  # Gives badges by rules
+  def give_badges
+    Badge.give_for_passage(self)
   end
 
   def success_percent
@@ -39,6 +57,7 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_next_question
     self.current_question = next_question
+    self.success_completed = completed? && success?
   end
 
   def correct_answer?(answer_ids)
