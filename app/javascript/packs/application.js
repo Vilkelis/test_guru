@@ -12,11 +12,14 @@ require("channels")
 
 import './bootstrap_custom.js'
 import "../stylesheets/application"
+import "./utilites/tools"
 import "./utilites/sorting"
 import "./utilites/password"
 import "./utilites/form_inline"
 import "./utilites/progress"
 import "./helpers/badges_form_helper"
+import "./helpers/tests_form_helper"
+import "./helpers/test_passages_helper"
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

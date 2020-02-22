@@ -30,6 +30,8 @@ ru:
         category_id: 'Категория'
         category: 'Категория'
         author_id: 'Автор'
+        time_limited: 'Ограничить время выполнения'
+        time_limit_min: 'Максимальное время выполнения (мин.)'
       test/questions:
         count: 'Кол-во вопросов'
       question:
@@ -59,6 +61,11 @@ ru:
         badge: 'Значок'  
         created_at: 'Время получения'
     values:
+      minutes:
+        few: '%{count} минуты'
+        many: '%{count} минут'
+        one: 'Одна минута'
+        other: '%{count} минуты'        
       test:
         level:
           simple: 'простой'

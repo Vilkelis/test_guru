@@ -68,6 +68,7 @@ en:
       start: 'Start'
     index:
       header: 'Choose test to pass'
+      title_time_limited: 'Passage time limited'      
 
   test_passages:
     show:
@@ -76,6 +77,7 @@ en:
         update: 'Next'
       question_stat: 'Question %{current_question_number} of %{total_questions_count}' 
       gist_question: 'Gist question'
+      remaining_time: 'Remaining time '
     result:
        title: 'The "%{test_title}" was Complited!'
        success_message: 'Test passed successfully (%{success_percent}%)'
@@ -83,7 +85,8 @@ en:
        back: 'To the tests list'          
        bagges_gived:
            one: 'Congratulations! You have earned the badge:'
-           few: 'Congratulations! You have earned badges:'         
+           few: 'Congratulations! You have earned badges:'  
+           other: 'Congratulations! You have earned badges:'        
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> saved successfully!'
       failure: 'An error occurred while saving Gist'

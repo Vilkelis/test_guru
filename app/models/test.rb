@@ -25,4 +25,8 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { case_sensitive: false,
                                   scope: :level,
                                   message: 'Test title and level not unique' }
+  validates :time_limit_min,
+            numericality: { only_integer: true,
+                            greater_than: 0 },
+            if: :time_limited
 end

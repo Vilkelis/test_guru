@@ -19,4 +19,14 @@ module TestsHelper
   def test_header(test)
     i18n_form_header(test)
   end
+
+  def test_time_limit(test)
+    if test.time_limited
+      i18n_b(test.time_limited) + ', ' + t('minutes',
+                                           scope: 'activerecord.values',
+                                           count: test.time_limit_min)
+    else
+      i18n_b(test.time_limited)
+    end
+  end
 end

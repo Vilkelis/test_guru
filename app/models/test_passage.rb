@@ -10,6 +10,7 @@ class TestPassage < ApplicationRecord
   has_many :user_badges, dependent: :destroy
   has_many :badges, through: :user_badges
 
+  before_validation :befile_validation_set_created_at, on: [:create]
   before_validation :before_validation_set_next_question
 
   scope :success_completed_by_user,
@@ -24,7 +25,9 @@ class TestPassage < ApplicationRecord
         }
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    unless time_expited?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+    end
     save!
   end
 
@@ -53,7 +56,34 @@ class TestPassage < ApplicationRecord
     test.questions.where('id <= :id', id: current_question.id).count
   end
 
+  # Returns true if user have time to pass test
+  def time_expited?
+    time_limited? && time_left_to_pass <= 0
+  end
+
+  # Returns seconds left to pass the test or nil if it not limited
+  def time_left_to_pass
+    return unless time_limited?
+
+    spent_seconds = Time.current - created_at
+    seconds = test.time_limit_min * 60 - spent_seconds
+    seconds.positive? ? seconds : 0
+  end
+
+  # Returns the time to which user can pass the test ((if time limited)
+  def time_limited_to
+    Time.current + time_left_to_pass
+  end
+
+  def time_limited?
+    test.time_limited
+  end
+
   private
+
+  def befile_validation_set_created_at
+    self.created_at = Time.current
+  end
 
   def before_validation_set_next_question
     self.current_question = next_question
@@ -69,6 +99,8 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
+    return if time_expited?
+
     if current_question.nil?
       test.questions.first
     else

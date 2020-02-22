@@ -29,6 +29,8 @@ en:
         category_id: 'Category'
         category: 'Category'
         author_id: 'Author'
+        time_limited: 'Limit the test passage time'
+        time_limit_min: 'Maximum times to pass the test (min.)'        
       test/questions:
         count: 'Questions count'
       question:
@@ -58,6 +60,9 @@ en:
         badge: 'Badge'  
         created_at: 'Taken at'                     
     values:
+      minutes:
+        one: 'One minute'
+        other: '%{count} minutes'      
       test:
         level:
           simple: 'simple'

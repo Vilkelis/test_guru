@@ -67,6 +67,7 @@ ru:
       start: 'Пройти тест'
     index:
       header: 'Выберите тест для прохождения'
+      title_time_limited: 'Время выполнения ограничено'
 
   test_passages:
     show:
@@ -75,6 +76,7 @@ ru:
         update: 'Дальше'
       question_stat: 'Вопрос %{current_question_number} из %{total_questions_count}'
       gist_question: 'Отправить Gist'
+      remaining_time: 'Осталось времени '
     result:
        title: 'Тест "%{test_title}" завершен!'
        success_message: 'Тест пройдет успешно (%{success_percent}%)'
