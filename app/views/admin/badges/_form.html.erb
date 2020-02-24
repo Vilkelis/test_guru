@@ -17,23 +17,12 @@
 														{include_blank: false, prompt: true}, 
 														{id: :badge_rule, class: 'form-control'} %>  
 					</div>
+
 					<div class="form-group">
-						<%= form.label :category_id %>  
-						<%= form.collection_select :category_id, 
-																				Category.all, 
-																				:id, :title, 
-																				{prompt: true}, 
-																				{class: 'form-control'} %>
-					</div>						
-					<div class="form-group">
-						<%= form.label :test_id %>  
-						<%= form.collection_select :test_id, 
-																			 Test.all, 
-																			 :id, 
-																			 :title, 
-																			 {prompt: true}, 
-																			 {class: 'form-control'} %>
-					</div>						
+						<%= form.label :rule_parameter %>  
+						<%= form.text_field :rule_parameter, id: :badge_rule_parameter, class: 'form-control', aria_describedby: "rule_parameter_help" %>
+						<%= content_tag :small,'HELLO!!', id: 'rule_parameter_help', class: 'form-text text-muted' %>
+					</div>
 
 				  <hr>
 
@@ -42,11 +31,12 @@
 						<%= form.select :image_file_name, 
 														 badge_image_file_names,   
 														{include_blank: false, prompt: true}, 
-														{id: :badge_image_file_name, class: 'form-control'} %> 														
+														{id: :badge_image_file_name, class: 'form-control', 
+														 data: {empty_image: badge_empty_image}} %> 														
 					</div>				
 
 					<div class="d-flex justify-content-center mb-4">
-						<%= badge_image_tag @badge.image_file_name, 
+						<%= badge_image_tag @badge, 
 																id: :badge_image_file_preview, 
 															  class: "rounded-sm image_in_form" %>
 					</div>

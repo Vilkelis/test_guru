@@ -7,4 +7,12 @@
 <% else %>
 <%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
 <% end %>	
+
+<% if @test_passage.badges.count.nonzero? %>
+<%= t '.badges_gived', count: @test_passage.badges.count %>	  
+<% @test_passage.badges.each do |badge| %>
+  <%= badge.title %>	
+<% end %>
+<% end %>
+
 <%= t '.action_txt', link: tests_url(lang: I18n.locale) %>

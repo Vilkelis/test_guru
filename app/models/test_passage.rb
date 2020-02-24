@@ -32,11 +32,6 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  # Gives badges by rules
-  def give_badges
-    Badge.give_for_passage(self)
-  end
-
   def success_percent
     ((correct_questions.to_f / test.questions.count) * 100.0).round
   end

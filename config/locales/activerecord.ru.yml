@@ -50,11 +50,8 @@ ru:
       badge:
         title: 'Наименование'
         rule: 'Правило выдачи'
-        image_file_name: 'Картинка' 
-        category_id: 'Категория'          
-        category: 'Категория'          
-        test_id: 'Тест'
-        test: 'Тест'
+        image_file_name: 'Картинка'          
+        rule_parameter: 'Параметр правила'
       user_badge:
         badge: 'Значок'  
         created_at: 'Время получения'
@@ -64,24 +61,32 @@ ru:
           simple: 'простой'
           medium: 'средний'
           hard:   'сложный'
-      badge:
-        rule:
-          all_of_category_passage: 'Пройдены все тесты категории'
-          first_attempt_passage: 'Тест пройден с первой попытки'
-          all_of_hard_level_passage: 'Пройдены все тесты уровня "сложный"'
-          all_of_medium_level_passage: 'Пройдены все тесты уровня "средний"'
-          all_of_simple_level_passage: 'Пройдены все тесты уровня "легкий"'          
+      badge:        
+        rule:           
+          rule_all_of_category_passages: 'Пройдены все тесты категории'
+          rule_first_attempt_passages: 'Тест пройден с первой попытки'
+          rule_all_of_level_passages: 'Пройдены все тесты указанного уровня'
           no_rule: '-'
-        rule_with_object:
-          all_of_category_passage: 'Пройдены все тесты категории "%{object_title}"'
-          first_attempt_passage: 'Тест "%{object_title}" пройден с первой попытки'
-          all_of_hard_level_passage: 'Пройдены все тесты уровня "сложный"'
-          all_of_medium_level_passage: 'Пройдены все тесты уровня "средний"'
-          all_of_simple_level_passage: 'Пройдены все тесты уровня "легкий"'          
-          no_rule: '-'          
+        rule_with_parameter:
+          rule_all_of_category_passages: 'Пройдены все тесты категории "%{rule_parameter}"'
+          rule_first_attempt_passages: 'Тест "%{rule_parameter}" пройден с первой попытки'
+          rule_all_of_level_passages: 'Пройдены все тесты уровня "%{rule_parameter}"'
+          no_rule: '-'      
+        rule_with_parameter:
+          rule_all_of_category_passages: 'Пройдены все тесты категории "%{rule_parameter}"'
+          rule_first_attempt_passages: 'Тест "%{rule_parameter}" пройден с первой попытки'
+          rule_all_of_level_passages: 'Пройдены все тесты уровня "%{rule_parameter}"'
+          no_rule: '-' 
+        rule_parameter_description:              
+          rule_all_of_category_passages: 'Укажите наименование категории'
+          rule_first_attempt_passages: 'Укажите наименование теста'
+          rule_all_of_level_passages: 'Укажите наименование уровня теста: hard - сложный, medium - средний, simple - простой'
+          no_rule: '-' 
     errors:
       messages:
         badge:
-          invalid_rule_value: ': не верное значение правила'
+          invalid_rule_value: 'имеет не верное значение'
+          invalid_rule_parameter: 'имеет не корректное значение'
+          invalid_image_file_name: 'имеет не верное значение'
         answer:
           too_many_answers: 'Слишком много вариантов ответов у вопроса'

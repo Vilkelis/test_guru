@@ -12,7 +12,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      @test_passage.give_badges
+      BadgesService.new(@test_passage).give_badges
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -45,9 +45,5 @@ class TestPassagesController < ApplicationController
     else
       flash[:alert] = t('.failure')
     end
-  end
-
-  def give_badge_if_need
-    Badge.check_rules(@test_passage)
   end
 end

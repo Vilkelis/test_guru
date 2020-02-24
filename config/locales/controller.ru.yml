@@ -80,7 +80,7 @@ ru:
        success_message: 'Тест пройдет успешно (%{success_percent}%)'
        unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
        back: 'Вернуться к списку тестов'
-       bagges_gived:
+       badges_gived:
            one: 'Поздравляем! Вы заработали значок:'
            other: 'Поздравляем! Вы заработали значки:'       
     gist:
@@ -102,3 +102,4 @@ ru:
       header: 'Значки'
       header_my_badges: 'Мои значки'
       header_all_badges: 'Все доступные значки'
+      choose_test: 'Выбрать тест для прохождения'

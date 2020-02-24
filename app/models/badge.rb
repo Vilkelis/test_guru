@@ -2,23 +2,29 @@
 
 # Badges
 class Badge < ApplicationRecord
-  include BadgeRulesAvailability
   include BadgeImagesAvailability
 
+  has_many :user_badges, dependent: :restrict_with_error
   has_many :users, through: :user_badges
 
   validates :title, presence: true
+  validate :validate_rule_value
+  validate :validate_rule_parameter
 
-  def self.give_for_passage(test_passage)
-    find_each do |badge|
-      badge.give_for(test_passage)
-    end
+  private
+
+  def validate_rule_value
+    return if BadgesService.valid_rule_code?(rule)
+
+    errors[:rule] << I18n.t('invalid_rule_value',
+                            scope: 'activerecord.errors.messages.badge')
   end
 
-  def give_for(test_passage)
-    return unless rule?(test_passage)
+  def validate_rule_parameter
+    return if BadgesService.valid_rule_parameter?(rule, rule_parameter)
 
-    gift = user_badges.new(user: test_passage.user, test_passage: test_passage)
-    gift.save!
+    errors[:rule_parameter] << I18n.t('invalid_rule_parameter',
+                                      scope: 'activerecord.errors.'\
+                                             'messages.badge')
   end
 end

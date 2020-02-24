@@ -12,42 +12,26 @@ module BadgesHelper
     rule_name(badge.rule)
   end
 
-  # Returns rule name for badge with caregory or test
+  # Returns rule name for badge
   def badge_rule_full(badge)
-    text = case badge_rule_view_type(badge.rule)
-           when :category
-             badge.category.title
-           when :test
-             badge.test.title
-           end
-    rule_name(badge.rule, text)
+    rule_name(badge.rule, badge.rule_parameter)
   end
 
   # Returns rule name by rule index
-  def rule_name(rule_number, object_title = nil)
-    rule = Badge::BADGE_RULES[rule_number] || :no_rule
-    if object_title
-      t(rule.to_s,
-        scope: 'activerecord.values.badge.rule_with_object',
-        object_title: object_title)
+  def rule_name(rule_number, rule_parameter = nil)
+    rule = BadgesService.rules[rule_number]
+    return unless rule
+
+    if rule_parameter
+      rule.title_with_parameter(rule_parameter)
     else
-      t(rule, scope: 'activerecord.values.badge.rule')
+      rule.title
     end
   end
 
   def badge_rules_for_select
-    Badge::BADGE_RULES.collect do |key, _value|
-      [rule_name(key), key, data: { view_type: badge_rule_view_type(key) }]
-    end
-  end
-
-  def badge_rule_view_type(rule_number)
-    if Badge.rule_needs_category?(rule_number)
-      :category
-    elsif Badge.rule_needs_test?(rule_number)
-      :test
-    else
-      :none
+    BadgesService.rules.collect do |key, value|
+      [value.title, key, data: { help: value.param_description }]
     end
   end
 
@@ -55,8 +39,12 @@ module BadgesHelper
     Badge.available_image_file_names
   end
 
-  def badge_image_tag(image_file_name, options)
-    image_tag Badge.image_src(image_file_name),
-              options.merge!(data: { base_url: Badge::BADGE_IMAGE_URL })
+  def badge_empty_image
+    Badge::EMPTY_IMAGE
+  end
+
+  def badge_image_tag(badge, options)
+    image_tag badge.image_src,
+              options.merge!(data: { base_url: badge.image_url })
   end
 end
