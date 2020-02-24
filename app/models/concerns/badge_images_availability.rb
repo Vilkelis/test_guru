@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Availability to use badge images
+# Availability  to use badge images
 module BadgeImagesAvailability
   extend ActiveSupport::Concern
 
