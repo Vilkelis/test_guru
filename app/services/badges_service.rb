@@ -22,10 +22,4 @@ class BadgesService < BaseService
   def self.rules
     BADGE_RULES
   end
-
-  # Check badge rule for test_passage
-  def self.rule_right?(test_passage)
-    rule_class = BADGE_RULES[test_passage.test.rule]
-    rule_class&.new(test_passage)&.rule_right?
-  end
 end
