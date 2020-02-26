@@ -46,7 +46,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def badge_params
     params.require(:badge).permit(:title, :image_file_name,
-                                  :rule, :category_id, :test_id)
+                                  :rule, :rule_parameter)
   end
 
   def find_badge
@@ -54,7 +54,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def find_badges
-    @badges = Badge.includes(:category, :test).all
+    @badges = Badge.all
   end
 
   def rescue_with_object_not_found(exception)

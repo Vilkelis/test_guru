@@ -15,17 +15,16 @@
 		</p>
 
 		<% if @test_passage.badges.count.nonzero? %>
-		  <h2> <%= t '.bagges_gived', count: @test_passage.badges.count %> </h2>
+		  <h2> <%= t '.badges_gived', count: @test_passage.badges.count %> </h2>
 		  
 		  <% @test_passage.badges.each do |badge| %>
 		    <div>
 					<div class="d-flex justify-content-left">
-					  <%= badge_image_tag badge.image_file_name, class: "image_in_table" %>  
+					  <%= badge_image_tag badge, class: "image_in_table" %>  
 				  </div>
 			 	  <%= badge.title %>	
 			 	</div>  
 		  <% end %>
-
 
 		<% end %>
 

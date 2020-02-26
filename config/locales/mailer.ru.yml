@@ -11,6 +11,9 @@ ru:
       action_html: 'Почему бы не попробовать пройти %{link}?'  
       action_txt: 'Почему бы не попробовать пройти еще один тест? %{link}'
       action_link: 'еще один тест'
+      badges_gived:
+           one: 'Вы заработали значок:'
+           other: 'Вы заработали значки:' 
   feedbacks_mailer:
     feedback:
       subject: 'Обратная связь с сайта %{app_name}'

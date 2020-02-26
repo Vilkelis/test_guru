@@ -83,7 +83,7 @@ en:
        success_message: 'Test passed successfully (%{success_percent}%)'
        unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)' 
        back: 'To the tests list'          
-       bagges_gived:
+       badges_gived:
            one: 'Congratulations! You have earned the badge:'
            few: 'Congratulations! You have earned badges:'  
            other: 'Congratulations! You have earned badges:'        
@@ -104,4 +104,5 @@ en:
     index:
       header: 'Badges'
       header_my_badges: 'My badges'
-      header_all_badges: 'Available badges'      
+      header_all_badges: 'Available badges'  
+      choose_test: 'Choose a test to pass'

@@ -22,20 +22,8 @@ function selectRuleChangeLinkHandler() {
 // Show/Hide controls according selected Budge Rule
 function selectRuleChangeHandler(selectRuleControl) {
 	let selectedItem = selectRuleControl.querySelector('option[value="' + selectRuleControl.value + '"]')
-	let viewType =  selectedItem ? selectedItem.dataset.viewType : 'none'
-	let categorySelect = document.getElementById('badge_category_id')
-	let testSelect = document.getElementById('badge_test_id')
-
-	if (viewType == 'test'){
-		categorySelect.parentNode.classList.add('d-none')
-		testSelect.parentNode.classList.remove('d-none')
-	}	else if (viewType == 'category'){
-		categorySelect.parentNode.classList.remove('d-none')
-		testSelect.parentNode.classList.add('d-none')
-	}	else {
-		categorySelect.parentNode.classList.add('d-none')
-		testSelect.parentNode.classList.add('d-none')
-	}
+	let helpControl = document.getElementById('rule_parameter_help')
+	helpControl.textContent = selectedItem.dataset.help
 }
 
 function selectImageChangeLinkHandler() {
@@ -46,5 +34,8 @@ function selectImageChangeLinkHandler() {
 function selectImageChangeHandler(selectImageControl) {
 	let previewImageControl = document.getElementById('badge_image_file_preview')
 	let imageFileName = selectImageControl.value
+	if (imageFileName == '') { 
+		imageFileName = selectImageControl.dataset.emptyImage
+	}
 	previewImageControl.setAttribute("src", previewImageControl.dataset.baseUrl + imageFileName);
 }

@@ -25,9 +25,7 @@ class User < ApplicationRecord
   # Returns user tests for specific test level
   # the level can take values :simple, :medium, :hard
   def used_tests(level)
-    unless %i[simple medium hard].include?(level)
-      raise 'Invalid value for level'
-    end
+    raise 'Invalid value for level' unless Test.valid_level_symbol?(level)
 
     tests.send(level)
   end
