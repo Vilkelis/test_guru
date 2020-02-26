@@ -8,20 +8,25 @@ class Badge < ApplicationRecord
   has_many :users, through: :user_badges
 
   validates :title, presence: true
-  validate :validate_rule_value
+
+  validates :rule, inclusion: { in: BadgesService.rules.keys,
+                                message: I18n.t('invalid_rule_value',
+                                                scope: [:activerecord,
+                                                        :errors,
+                                                        :messages,
+                                                        :badge]) }
+
   validate :validate_rule_parameter
 
   private
 
-  def validate_rule_value
-    return if BadgesService.valid_rule_code?(rule)
-
-    errors[:rule] << I18n.t('invalid_rule_value',
-                            scope: 'activerecord.errors.messages.badge')
-  end
-
   def validate_rule_parameter
-    return if BadgesService.valid_rule_parameter?(rule, rule_parameter)
+    rule_class = BadgesService.rules[rule]
+
+    # for an invalid rule all parameters are valid
+    return unless rule_class
+
+    return if rule_class.valid_parameter?(rule_parameter)
 
     errors[:rule_parameter] << I18n.t('invalid_rule_parameter',
                                       scope: 'activerecord.errors.'\

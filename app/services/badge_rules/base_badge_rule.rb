@@ -45,9 +45,10 @@ class BadgeRules::BaseBadgeRule
 
   # Returns test_ids of tests which was successfully
   # passed after specified test_passage
-  def tests_passed_after
+  def test_ids_passed_after
     user_id = @test_passage.user_id
     passage_id = UserBadge.last_badged_passage_id(user_id)
     TestPassage.success_completed_after_passage(user_id, passage_id)
+               .pluck(:test_id)
   end
 end

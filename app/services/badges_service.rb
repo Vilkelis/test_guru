@@ -10,29 +10,13 @@ class BadgesService < BaseService
     @test_passage = test_passage
   end
 
-  def give_badges
-    Badge.find_each do |badge|
-      rule_class = self.class.rules[badge.rule]
-      if rule_class&.new(badge, @test_passage)&.rule_right?
-        gift = UserBadge.new(user: @test_passage.user,
-                             badge: badge,
-                             test_passage: @test_passage)
-        gift.save!
-      end
+  def badges
+    # Give badges only for success tests
+    return [] unless @test_passage.success?
+
+    Badge.find_each.filter do |badge|
+      self.class.rules[badge.rule]&.new(badge, @test_passage)&.rule_right?
     end
-  end
-
-  def self.valid_rule_code?(rule_code)
-    rules[rule_code]
-  end
-
-  def self.valid_rule_parameter?(rule_code, rule_parameter)
-    rule_class = rules[rule_code]
-
-    # for an invalid rule all parameters are valid
-    return true unless rule_class
-
-    rule_class.valid_parameter?(rule_parameter)
   end
 
   def self.rules

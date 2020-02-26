@@ -16,8 +16,8 @@ class BadgeRules::RuleAllOfLevelPassage < BadgeRules::BaseBadgeRule
 
   # Is the rule right for the test_passage?
   def rule_right?
-    test_ids = tests_passed_after
-    Test.send(badge.rule_parameter).count.nonzero? &&
-      Test.send(badge.rule_parameter).where.not(id: test_ids).count.zero?
+    test_ids = test_ids_passed_after
+    Test.send(badge.rule_parameter).exists? &&
+      Test.send(badge.rule_parameter).where.not(id: test_ids).none?
   end
 end

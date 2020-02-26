@@ -20,12 +20,19 @@ class TestPassage < ApplicationRecord
   scope :success_completed_after_passage,
         lambda { |user_id, test_passage_id|
           where(user_id: user_id, success_completed: true)
-            .where('id > ?', test_passage_id).distinct.pluck(:test_id)
+            .where('id > ?', test_passage_id).distinct
         }
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
+    # If test compleeted we give badges only for success tests
+    return unless completed?
+
+    # Give badges whose rules are right on this passage
+    BadgesService.new(self).badges.each do |badge|
+      UserBadge.new(badge: badge, user: user, test_passage: self)
+    end
   end
 
   def completed?
