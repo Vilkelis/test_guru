@@ -11,10 +11,10 @@ class Badge < ApplicationRecord
 
   validates :rule, inclusion: { in: BadgesService.rules.keys,
                                 message: I18n.t('invalid_rule_value',
-                                                scope: [:activerecord,
-                                                        :errors,
-                                                        :messages,
-                                                        :badge]) }
+                                                scope: %i[activerecord
+                                                          errors
+                                                          messages
+                                                          badge]) }
 
   validate :validate_rule_parameter
 
