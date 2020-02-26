@@ -14,6 +14,7 @@ class Answer < ApplicationRecord
   def validate_count_for_question
     return if question.answers.count < 4
 
-    errors[:base] << 'Too many answers for one question.'
+    errors[:base] << I18n.t('too_many_answers',
+                            scope: 'activerecord.errors.messages.answer')
   end
 end

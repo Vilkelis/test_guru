@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Admin users
+# Admin  users
 class Admin < User
   validates :name, :surname, presence: true
 

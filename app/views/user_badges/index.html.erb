@@ -1,0 +1,62 @@
+<h1><%= t('.header') %></h1>
+
+<div class="mb-2">
+  <%= link_to t('.choose_test'), tests_path, class: 'btn btn-info' %> 
+</div>
+
+<ul class="nav nav-tabs" id="myBadgesTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="my_badges_tab" 
+    	 data-toggle="tab" href="#my_badges" 
+    	 role="tab" aria-controls="my_badges" 
+    	 aria-selected="true"><%= t('.header_my_badges')%></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="all_badges_tab" 
+    	 data-toggle="tab" href="#all_badges" 
+    	 role="tab" aria-controls="all_badges" 
+    	 aria-selected="false"><%= t('.header_all_badges')%></a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="my_badges" role="tabpanel" aria-labelledby="my_badges_tab">
+  	
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col" class="sort-by-title pointer"><%= i18n_ma(@user_badges, 'badge') %> 
+						<%= fa_icon 'arrow-up', class: "text-dark d-none sorted-up" %> 
+						<%= fa_icon 'arrow-down', class: "text-dark d-none sorted-down" %>			
+					</th>
+					<th scope="col" class="sort-by-title pointer"><%= i18n_ma(@user_badges, 'created_at') %>
+						<%= fa_icon 'arrow-up', class: "text-dark d-none sorted-up" %> 
+						<%= fa_icon 'arrow-down', class: "text-dark d-none sorted-down" %>				
+					</th>
+			  </tr>
+			</thead>
+			<tbody>
+		    <%= render @user_badges %>
+		  </tbody>
+		</table>
+
+  </div>
+  <div class="tab-pane fade" id="all_badges" role="tabpanel" aria-labelledby="all_badges_tab">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th><%= i18n_ma(@badges, 'title') %></th>
+						<th><%= i18n_ma(@badges, 'rule') %></th>
+						<th><%= i18n_ma(@badges, 'image_file_name') %></th>						 
+					</tr>
+				</thead>
+				<tbody>
+			  	<%= render @badges %>
+			  </tbody>
+			</table>
+
+
+  </div>
+</div>
+
+

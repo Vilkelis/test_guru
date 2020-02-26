@@ -8,6 +8,7 @@ ru:
         other: 'Обнаружено %{count} ошибки'
     header:
       admin_panel: 'Панель администратора'
+      user_badges: 'Мои значки'  
     header_user_actions:
       logout: 'Выход'
       login: 'Вход'
@@ -25,8 +26,9 @@ ru:
     header:
       header: 'Администрирование'
       title: 'Панель администратора'
-      tests: 'Список тестов'
-      gists: 'Список gist'
+      tests: 'Тесты'
+      gists: 'Список gists'
+      badges: 'Значки'
     tests:
       back_button:
         back: 'Назад в список тестов'
@@ -39,6 +41,9 @@ ru:
     gists:
       gist:
         go_to_gist_url: 'Показать Gist >'
+    badges:
+      back_button:
+        back: 'Назад к списку значков'
 
   users:
     sessions:
@@ -62,6 +67,7 @@ ru:
       start: 'Пройти тест'
     index:
       header: 'Выберите тест для прохождения'
+      title_time_limited: 'Время выполнения ограничено'
 
   test_passages:
     show:
@@ -70,14 +76,19 @@ ru:
         update: 'Дальше'
       question_stat: 'Вопрос %{current_question_number} из %{total_questions_count}'
       gist_question: 'Отправить Gist'
+      remaining_time: 'Осталось времени '
     result:
        title: 'Тест "%{test_title}" завершен!'
        success_message: 'Тест пройдет успешно (%{success_percent}%)'
        unsuccess_message: 'Тест пройден не удачно (%{success_percent}%)'
        back: 'Вернуться к списку тестов'
+       badges_gived:
+           one: 'Поздравляем! Вы заработали значок:'
+           other: 'Поздравляем! Вы заработали значки:'       
     gist:
       success_html: '<a href="%{url}" target="blank">Gist</a> успешно сохранен!'
       failure: 'Во время сохранения gist возникла ошибка'
+
 
   feedbacks:     
     form:
@@ -87,3 +98,10 @@ ru:
       submit: 'Отправить сообщение'
     create:
       notice_success: 'Ваше сообщение успешно отправлено!'
+
+  user_badges:
+    index:
+      header: 'Значки'
+      header_my_badges: 'Мои значки'
+      header_all_badges: 'Все доступные значки'
+      choose_test: 'Выбрать тест для прохождения'

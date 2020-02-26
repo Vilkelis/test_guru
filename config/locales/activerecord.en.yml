@@ -15,7 +15,13 @@ en:
         other: 'Gists list'   
       feedback:
         one: 'Feedback message'
-        other: 'Feedback messages'                              
+        other: 'Feedback messages'         
+      badge:
+        one: 'Badge'
+        other: 'Badges' 
+      user_badge:
+        one: 'Badge'
+        other: 'Badges' 
     attributes:
       test:
         title: 'Title'
@@ -23,6 +29,8 @@ en:
         category_id: 'Category'
         category: 'Category'
         author_id: 'Author'
+        time_limited: 'Limit the test passage time'
+        time_limit_min: 'Maximum times to pass the test (min.)'        
       test/questions:
         count: 'Questions count'
       question:
@@ -40,9 +48,44 @@ en:
         name: 'Name'
         email: 'Email'
         message: 'Message'
+      badge:
+        title: 'Title'
+        rule: 'Rule'
+        image_file_name: 'Image'    
+        rule_parameter: 'Rule parameter'
+      user_badge:
+        badge: 'Badge'  
+        created_at: 'Taken at'                     
     values:
+      minutes:
+        one: 'One minute'
+        other: '%{count} minutes'      
       test:
         level:
           simple: 'simple'
           medium: 'medium'
           hard:   'hard'
+      badge:
+        rule:          
+          rule_all_of_category_passages: 'Passed all category tests'
+          rule_first_attempt_passages: 'Test passed on the first attempt'
+          rule_all_of_level_passages: 'Passed all tests of a level'
+          no_rule: '-'      
+        rule_with_parameter:
+          rule_all_of_category_passages: 'Passed all tests of the category "%{rule_parameter}"'
+          rule_first_attempt_passages: 'Test "%{rule_parameter}" passed on the first attempt'
+          rule_all_of_level_passages: 'Passed all tests of "%{rule_parameter}" level'
+          no_rule: '-' 
+        rule_parameter_description:              
+          rule_all_of_category_passages: 'Enter the title of a test category'
+          rule_first_attempt_passages: 'Enter the title of a test'
+          rule_all_of_level_passages: 'Enter a test level name: hard, medium or simple'
+          no_rule: '-'          
+    errors:
+      messages:
+        badge:
+          invalid_rule_value: ' has invalid value'
+          invalid_rule_parameter: 'has invalid value'
+          invalid_image_file_name: 'has invalid value'
+        answer:
+          too_many_answers: 'Too many answers for one question.'

@@ -17,6 +17,16 @@
 						<%= form.label :category_id %>  
 						<%= form.collection_select :category_id, Category.all, :id, :title, {prompt: true}, {class: 'form-control'} %>
 					</div>			
+
+          <div class="form-group form-check">
+            <%= form.check_box :time_limited, class: 'form-check-input' %>            
+            <%= form.label :time_limited, id: :test_time_limited, class: 'form-check-label' %>          
+          </div>
+         	<div class="form-group">
+						<%= form.label :time_limit_min %>  
+						<%= form.number_field :time_limit_min, id: :test_time_limit_min, min: 0, class: 'form-control' %>
+					</div>	  
+
 					<div class="form-group">
 						<%= form.submit class: 'btn btn-secondary' %>
 					</div>

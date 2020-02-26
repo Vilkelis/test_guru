@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -23,9 +25,7 @@ class User < ApplicationRecord
   # Returns user tests for specific test level
   # the level can take values :simple, :medium, :hard
   def used_tests(level)
-    unless %i[simple medium hard].include?(level)
-      raise 'Invalid value for level'
-    end
+    raise 'Invalid value for level' unless Test.valid_level_symbol?(level)
 
     tests.send(level)
   end
