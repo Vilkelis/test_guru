@@ -6,6 +6,11 @@
 .test_passed_unsuccessfully {
 	color: red;	
 }
+
+.badge_image {
+	max-height: 60px;
+	max-width: 60px;
+}
 </style>
 
 <h1><%= t('.title') %></h1>
@@ -21,5 +26,22 @@
 			<%= t '.unsuccess_message', success_percent: @test_passage.success_percent %>
 		</strong>
 	<% end %>	
+</p>
+<% if @test_passage.badges.count.nonzero? %>
+  <p>
+	  <strong> <%= t '.badges_gived', count: @test_passage.badges.count %> </strong>
+	  
+	  <% @test_passage.badges.each do |badge| %>
+	    <div class="mb-2">
+				<div>					 
+					<%= image_tag attachments[badge.image_file_name].url, class: 'badge_image' %>
+			  </div>
+		 	  <%= badge.title %>	
+		 	</div> 
+	  <% end %>
+	</p>
+<% end %>
+<p>
 	<%= t '.action_html', link: (link_to t('.action_link'), tests_url(lang: I18n.locale) ) %>
 </p>
+ 

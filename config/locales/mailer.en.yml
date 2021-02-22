@@ -10,7 +10,10 @@ en:
       unsuccess_message: 'Test passed unsuccessfully (%{success_percent}%)'    
       action_html: 'Why not to finish %{link}?'  
       action_txt: 'Why not to finish more? %{link}'  
-      action_link: 'more'      
+      action_link: 'more' 
+      badges_gived:
+        one: 'You have earned the badge:'
+        few: 'You have earned badges:'
   feedbacks_mailer:
     feedback:
       subject: 'Feedback message from %{app_name} site'

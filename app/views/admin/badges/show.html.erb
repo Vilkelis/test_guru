@@ -1,0 +1,19 @@
+
+		<h1><%= i18n_mn(@badge) %>: <%= @badge.title %></h1>
+
+		<p><%= link_to i18n_cr('action_full.edit', obj: i18n_mn(@badge)), 
+									 edit_admin_badge_path(@badge), 
+									 class: "btn btn-secondary" %></p>
+
+		<p><strong><%= i18n_ma(@badge,'title') %>: </strong><%= @badge.title %></p>
+		<p><strong><%= i18n_ma(@badge,'rule') %>: </strong><%= badge_rule_full(@badge) %></p>
+		<p><strong><%= i18n_ma(@badge,'image_file_name') %>: </strong><%= @badge.image_file_name %></p>
+
+		<div class="d-flex justify-content-left mb-4">
+			<%= badge_image_tag @badge, 
+													id: :badge_image_file_preview, 
+													class: "rounded-sm image_in_form" %>
+		</div>
+
+		<%= render 'back_button' %> 
+

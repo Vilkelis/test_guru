@@ -1,0 +1,24 @@
+<tr>
+	<td>
+		<%= link_to badge.title, admin_badge_path(badge), class: 'badge-title', data: {badge_id: badge.id} %>
+	</td>
+	<td>
+	  <%= badge_rule_full(badge) %>	
+	</td>
+	<td>
+	  <%= badge.image_file_name%>
+		<div class="d-flex justify-content-left">
+		  <%= badge_image_tag badge, class: "image_in_table" %>
+	  </div>
+	</td>
+
+	<td><%= link_to i18n_cr('action.show'), admin_badge_path(badge), class: "btn btn-secondary" %></td>
+	<td><%= link_to i18n_cr('action.edit'), edit_admin_badge_path(badge), class: "btn btn-secondary" %></td>
+	<td>
+		<%= link_to i18n_cr('action.destroy'), 
+								admin_badge_path(badge), 
+								class: "btn btn-secondary",
+								method: :delete,
+								data: { confirm: i18n_cr('message.destroy.confirm', obj: i18n_mn(badge)) } %>
+	</td>
+</tr>
